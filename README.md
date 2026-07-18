@@ -81,6 +81,8 @@ All source code, algorithm choices, design decisions, and final implementations 
 
 ### Algorithm and Data Structure Choices
 
+We chose arrays because the input already comes as a fixed number of arguments through argc and argv. Arrays are straightforward to allocate, easy to index, and we were already comfortable working with them from previous projects. We were aware that operations such as removing the first element may require shifting values, but we felt the simpler implementation outweighed that cost for our first approach.
+
 write this later
 
 ---
