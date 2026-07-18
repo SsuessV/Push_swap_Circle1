@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -MMD -MP
 
-INCLUDES = -Iincludes -Ilibft/includes -Ift_printf/includes
+INCLUDES = -Iincludes -Ilibft -Ift_printf
 
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
@@ -30,13 +30,13 @@ $(PRINTF):
 
 clean:
 	rm -f $(OBJS) $(DEPS)
-	make -C libft clean
-	make -C ft_printf clean
+	$(MAKE) -C libft clean
+	$(MAKE) -C ft_printf clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C libft fclean
-	make -C ft_printf fclean
+	$(MAKE) -C libft fclean
+	$(MAKE) -C ft_printf fclean
 
 re: fclean all
 
