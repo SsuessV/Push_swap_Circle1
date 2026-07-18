@@ -44,6 +44,9 @@ pb
 ra
 sa
 pa
+To use the project with your own code, include the Push_swap header:
+`#include "push_swap.h"`
+The Makefile will automatically compile the required source files and link the Libft library.
 
 ---
 
@@ -51,9 +54,11 @@ pa
 
 ### References
 
-* Online references for the C Standard Library (cppreference.com, Cplusplus.com)
-* Manual pages
-* Harvard CS50 Lectures, YouTube tutorials on variadic functions, 
+* 42 Push_swap subject and project guidelines
+* Online references for the C Standard Library (cppreference.com, C documentation)
+* Manual pages (`man malloc`, `man free`, `man write`, `man exit`)
+* Resources about sorting algorithms and stack data structures
+* Tutorials and discussions about Push_swap strategies
 * Assistance and discussions with 42 students
 
 ### AI Usage
@@ -61,20 +66,31 @@ pa
 AI tools (such as ChatGPT and Claude) were used as learning and review aids during the development of this project.
 
 They were used to:
-- Explain the behavior and requirements of the `printf` function.
-- Clarify the use of variadic functions and the `stdarg.h` macros.
-- Discuss edge cases and expected outputs for different format specifiers.
-- Review implementation ideas and assist with debugging.
+- Explain Push_swap requirements and the allowed operations.
+- Clarify concepts related to stacks, linked lists, and memory management.
+- Discuss different sorting strategies and algorithm optimizations.
+- Review implementation approaches and help identify potential edge cases.
+- Assist with debugging and understanding compilation errors.
 - Help structure and refine the project documentation (README).
 
-All source code, design decisions, and final implementations were written and validated manually by the author.
+All source code, algorithm choices, design decisions, and final implementations were written, tested, and validated manually by the authors.
 
 ---
 
 ### Algorithm and Data Structure Choices
+
+write this later
 
 ---
 
 ## Notes
 
 This project focuses on:
+
+- Designing and implementing efficient sorting algorithms under strict constraints.
+- Understanding and manipulating stack-based data structures.
+- Managing dynamic memory allocation and preventing memory leaks.
+- Working with linked lists and creating reusable data structures.
+- Handling input validation and edge cases, such as duplicates, invalid arguments, and integer overflow.
+- Optimizing the number of operations required to sort a stack.
+- Improving problem-solving skills through algorithm design and performance analysis.
