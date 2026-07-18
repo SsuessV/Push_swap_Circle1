@@ -22,33 +22,33 @@ The project focuses on algorithm design, data structures, optimization, and effi
 
 ### Compilation
 
-To compile the project, run:
-`make`
-This will create the executable:
-`./push_swap`
+To compile the project, run:  
+`make`  
+This will create the executable:  
+`./push_swap`  
 To remove object and dependency files:  
-`make clean`  
+`make clean`    
 To remove all generated files:  
-`make fclean`  
-To recompile everything from scratch:  
-`make re`
+`make fclean`   
+To recompile everything from scratch:    
+`make re`  
 
 ### Usage
 
-Compile the project using the provided Makefile:
-`make`
-Run the program by passing a list of integers as arguments:
-`./push_swap 4 67 3 87 12`
-The program will output the sequence of operations required to sort the stack:
+Compile the project using the provided Makefile:  
+`make`  
+Run the program by passing a list of integers as arguments:  
+`./push_swap 4 67 3 87 12`  
+The program will output the sequence of operations required to sort the stack:  
 ```
 pb
 ra
 sa
 pa
 ```
-To use the project with your own code, include the Push_swap header:
-`#include "push_swap.h"`
-The Makefile will automatically compile the required source files and link the Libft library.
+To use the project with your own code, include the Push_swap header:  
+`#include "push_swap.h"`  
+The Makefile will automatically compile the required source files and link the Libft library.  
 
 ---
 
