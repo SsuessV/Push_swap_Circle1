@@ -40,10 +40,12 @@ Compile the project using the provided Makefile:
 Run the program by passing a list of integers as arguments:
 `./push_swap 4 67 3 87 12`
 The program will output the sequence of operations required to sort the stack:
+```
 pb
 ra
 sa
 pa
+```
 To use the project with your own code, include the Push_swap header:
 `#include "push_swap.h"`
 The Makefile will automatically compile the required source files and link the Libft library.
