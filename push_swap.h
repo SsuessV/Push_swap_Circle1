@@ -3,20 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/18 18:03:02 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/18 18:03:56 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include "../libft/includes/libft.h"
+#include "../ft_printf/includes/ft_printf.h"
+
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft.h"
-# include "ft_printf.h"
 
+/* Parsing */
+
+/* Stack functions */
+
+/* Operations */
+
+/* Sorting */
 
 #endif
