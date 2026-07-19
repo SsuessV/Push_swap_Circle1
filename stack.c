@@ -1,39 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/19 17:03:38 by bsurilla         ###   ########.fr       */
+/*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
+/*   Updated: 2026/07/19 15:21:36 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
-
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct 
-{
-	int	*numbers;
-	int size;
-	int capacity;
-	//int top;
-} stack;
-
-
-/* Parsing */
-
-/* Stack functions */
-
-/* Operations */
-
-/* Sorting */
-
-#endif
+#include "push_swap.h"
