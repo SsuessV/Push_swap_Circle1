@@ -6,9 +6,14 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/21 20:25:01 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/21 20:46:12 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+t_stack *stack_init(stack, int *numbers, int size)
+{
+
+    
+}
