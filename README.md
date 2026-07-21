@@ -16,6 +16,24 @@ The available operations include:
 
 The project focuses on algorithm design, data structures, optimization, and efficient manipulation of stacks.
 
+## Contributors
+
+This project was developed by:
+
+- Su Jung, Youn (suyoun)
+  - Implemented input parsing
+  - Handled argument validation and error checking
+  - Integrated parsing with stack initialization
+  - Developed stack manipulation operations
+  -
+
+- Bea-Marie, Surilla (bsurilla)
+  - Designed and implemented stack structures
+  - Implemented stack creation and memory management
+  - Developed stack manipulation operations
+  -
+  -
+
 ---
 
 ## Instructions
@@ -69,7 +87,7 @@ AI tools (such as ChatGPT and Claude) were used as learning and review aids duri
 
 They were used to:
 - Explain Push_swap requirements and the allowed operations.
-- Clarify concepts related to stacks, linked lists, and memory management.
+- Clarify concepts related to parsing, stacks, and memory management.
 - Discuss different sorting strategies and algorithm optimizations.
 - Review implementation approaches and help identify potential edge cases.
 - Assist with debugging and understanding compilation errors.
@@ -82,8 +100,6 @@ All source code, algorithm choices, design decisions, and final implementations 
 ### Algorithm and Data Structure Choices
 
 We chose arrays because the input already comes as a fixed number of arguments through argc and argv. Arrays are straightforward to allocate, easy to index, and we were already comfortable working with them from previous projects. We were aware that operations such as removing the first element may require shifting values, but we felt the simpler implementation outweighed that cost for our first approach.
-
-
 
 ---
 

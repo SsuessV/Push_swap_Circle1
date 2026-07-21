@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:00:55 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/05/15 16:09:25 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/21 14:56:41 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long	ft_atoll(const char *nptr)
 {
 	int			i;
 	int			sign;
 	long long	number;
+	int			digit;
 
 	i = 0;
-	while (nptr[i] == 32 || (nptr[i] <= 13 && nptr[i] >= 9))
-		i++;
 	sign = 1;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -31,6 +30,12 @@ int	ft_atoi(const char *nptr)
 	number = 0;
 	while (nptr[i] <= '9' && nptr[i] >= '0')
 	{
+		digit = nptr[i] - '0';
+
+		if (sign == 1 && number > (LLONG_MAX - digit) / 10)
+			return (LLONG_MAX);
+		if (sign == -1 && number > (-(LLONG_MIN + digit)) / 10)
+			return (LLONG_MIN);
 		number = number * 10 + (nptr[i] - '0');
 		i++;
 	}
