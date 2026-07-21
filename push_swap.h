@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/21 14:46:06 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/21 21:20:15 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 # include <limits.h>
 
 /* Parsing */
+void		parse_input(int argc, char **argv);
+int			is_valid_number(char *input);
+int			is_inrange(long long n);
+void		print_err(void);
+long long	ft_atoll(const char *nptr);
 
 /* Stack functions */
 

@@ -4,7 +4,7 @@
 
 ## Description
 
-**Push_swap** is a sorting algorithm project from the 42 curriculum.  
+**Push_swap** is a sorting algorithm project from the 42 curriculum, completed as a two-person group project.
 The **objective** is to sort a stack of integers using two stacks (`A` and `B`) and a limited set of operations.   
 The program must calculate and output the smallest possible sequence of instructions needed to sort the stack.
 

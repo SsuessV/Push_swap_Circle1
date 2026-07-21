@@ -6,28 +6,38 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/21 15:10:38 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/21 21:27:17 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 void	parse_input(int argc, char **argv)
 {
-	char	**numbers;
+	char		**numbers;
+	long long	value; //check the data type
+	int			i;
 
 	numbers = NULL;
+	i = 0;
 	if (argc == 1)
 		return ;
-	else if (argc == 2)
-	{
+	if (argc == 2)
 		numbers = ft_split (argv[1], ' ');
-	}
 	else
+		numbers = &argv[1];
+	while (numbers[i])
 	{
-		
+		if ((is_valid_number(numbers[i]) == 0))
+			print_error();
+		value = ft_atoll(numbers[i]);
+		if (is_inrange(value) == 0)
+			print_error();
+		// create node here
+		// add_to_stack((int)value);
+		i++;
 	}
+	//after converting to long long, do the dup check
 }
 
 int	is_valid_number(char *input)
@@ -45,17 +55,19 @@ int	is_valid_number(char *input)
 	return (1);
 }
 
-int	is_range(char *input)
+int	is_inrange(long long n)
 {
-	long long	num;
-
-	num = ft_atoll(input);
-	if (num < INT_MIN || num > INT_MAX)
+	if (n < INT_MIN || n > INT_MAX)
 		return (0);
 	return (1);
 }
 
-int	is_dupulicate(char *input)
+int	is_duplicate(int *stack, int size, int value)
 {
-	
+}
+
+void print_err(void)
+{
+	write(2, "Error\n", 6);
+	exit(42); //any non zero value. return(0) = exit(0)
 }

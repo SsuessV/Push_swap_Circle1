@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:00:55 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/21 14:56:41 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/21 21:14:57 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ long long	ft_atoll(const char *nptr)
 		i++;
 	}
 	number = 0;
-	while (nptr[i] <= '9' && nptr[i] >= '0')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		digit = nptr[i] - '0';
-
 		if (sign == 1 && number > (LLONG_MAX - digit) / 10)
 			return (LLONG_MAX);
 		if (sign == -1 && number > (-(LLONG_MIN + digit)) / 10)
 			return (LLONG_MIN);
-		number = number * 10 + (nptr[i] - '0');
+		number = number * 10 + digit;
 		i++;
 	}
 	return (number * sign);
