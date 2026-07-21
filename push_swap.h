@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/19 17:03:38 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/21 20:24:13 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct 
+typedef struct s_stack
 {
 	int	*numbers;
 	int size;
+	int top;
 	int capacity;
 	//int top;
-} stack;
+} t_stack;
 
 
 /* Parsing */
