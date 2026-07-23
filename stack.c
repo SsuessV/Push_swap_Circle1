@@ -3,22 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bea_s <bea_s@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/21 22:15:05 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/23 09:14:04 by bea_s            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void *stack_init(t_stack *stack, int *numbers, int size)
+void    stack_init(t_stack *stack, int *numbers, int size)
 {
-    int top;
-    int capacity;
-    
-    size = 4;
-    capacity = size;
-    
+    int i;
+
+    stack->size = size;
+    stack->numbers = malloc(sizeof(int) * size);
+    if (!stack->numbers)
+        return;
+    i = 0;
+    while (i < size)
+    {
+        stack->numbers[i] = numbers[i];
+        i++;        
+    }
+}
+void    stack_free(t_stack *stack)
+{
+    if (stack == NULL)
+        return;
+   	free(stack->numbers);
+    stack->numbers = NULL;
 }
 

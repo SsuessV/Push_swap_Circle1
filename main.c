@@ -17,9 +17,9 @@ int main(int argc, char **argv)
 {
     t_stack a;
     t_stack b;
-    int numbers = {8, 3, 4, 1};
+    int numbers[] = {8, 3, 4, 1};
     int size = 4;
     
-    stack_init(&a, &numbers, size);
+    stack_init(&a, numbers, size);
     stack_init(&b, NULL, 0);
 }

@@ -22,8 +22,6 @@ typedef struct s_stack
 {
 	int	*numbers;
 	int size;
-	int top;
-	int capacity;
 } t_stack;
 
 
