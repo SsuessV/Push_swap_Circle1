@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/24 12:40:01 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:35:55 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 /* Parsing */
 
 /* Stack functions */
-void stack_init(t_stack *stack, int *numbers, int size, int capacity);
+void	stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void    stack_free(t_stack *stack);
 
 /* Operations */

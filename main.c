@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/24 12:48:57 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/24 17:01:01 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int main(void)
     
     // number = parserfuction_numbers;#
     // size = function_of_size;
-    // capacity = function_of_size;
-    
+    // capacity = function_of_size; 
     stack_init(&a, numbers, size, capacity);
     stack_init(&b, NULL, 0, capacity);
-  
-    int i = 0;
+    
+//   ---------- tests to see if the above works ------------ //
+    
+int i = 0;
     while (i < a.size)
     {
         printf("%d ", a.numbers[i]);
