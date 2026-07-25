@@ -6,14 +6,13 @@
 #    By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 20:33:41 by bsurilla          #+#    #+#              #
-#    Updated: 2026/07/25 12:49:17 by suyoun           ###   ########.fr        #
+#    Updated: 2026/07/25 21:44:54 by suyoun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c \
-	  ft_atoll.c \
 	  ft_isalnum.c \
 	  ft_isascii.c \
 	  ft_isprint.c \

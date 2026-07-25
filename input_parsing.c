@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/21 21:27:17 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 21:38:00 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,46 @@ void	validate_convert_fill(int *arr, char **numbers, int size)
 	}
 }
 
-void	print_error(void)
+long long	ft_atoll(const char *nptr)
 {
-	write(2, "Error\n", 6);
-	exit(42); //any non zero value. return(0) = exit(0)
+	int			i;
+	int			sign;
+	long long	number;
+	int			digit;
+
+	i = 0;
+	sign = 1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	number = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		digit = nptr[i] - '0';
+		if (sign == 1 && number > (LLONG_MAX - digit) / 10)
+			return (LLONG_MAX);
+		if (sign == -1 && number > (-(LLONG_MIN + digit)) / 10)
+			return (LLONG_MIN);
+		number = number * 10 + digit;
+		i++;
+	}
+	return (number * sign);
+}
+
+void	free_split(char **words)
+{
+	int	i;
+
+	i = 0;
+	if (!words)
+		return ;
+	while (words[i])
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
 }

@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -MMD -MP
 INCLUDES = -Iincludes -Ilibft -Ift_printf
 
 LIBFT = libft/libft.a
-PRINTF = ft_printf/libftprintf.a
+PRINTF = libft/libftprintf.a
 
 SRCS =	\
 
