@@ -21,15 +21,23 @@
 # include <limits.h>
 
 /* Parsing */
-void		parse_input(int argc, char **argv);
-int			is_valid_number(char *input);
-int			is_inrange(long long n);
-void		print_err(void);
-long long	ft_atoll(const char *nptr);
+void	parse_input(int argc, char **argv, t_stack *stack);
+int     count_size(char **numbers)
+void	validate_convert_fill(int *arr, char **numbers, int size)
+void    print_error(void);
+int     is_valid_number(char *input);
+int     is_inrange(long long n);
+void	is_duplicate(int *arr, int size);
+//atoll?
 
 /* Stack functions */
 
-/* Operations */
+/* Stack Operations */
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
 
 /* Sorting */
 

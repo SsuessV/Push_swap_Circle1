@@ -12,61 +12,60 @@
 
 #include "push_swap.h"
 
-void	parse_input(int argc, char **argv)
+void	parse_input(int argc, char **argv, t_stack *stack)
 {
 	char		**numbers;
-	long long	value; //check the data type
-	int			i;
+	int			*arr;
+	int			size;
 
 	numbers = NULL;
-	i = 0;
 	if (argc == 1)
 		return ;
 	if (argc == 2)
 		numbers = ft_split (argv[1], ' ');
 	else
 		numbers = &argv[1];
-	while (numbers[i])
+	size = count_size(numbers);
+	arr = malloc(size * sizeof(int));
+	if (!arr)
+		print_error();
+	validate_convert_fill(arr, numbers, size);
+	is_duplicate(arr, size);
+	stack_init(stack, arr, size, size);
+	free(arr);
+	if (argc == 2)
+    	free_split(numbers);
+}
+
+int	count_size(char **numbers)
+{
+	int size;
+
+	size = 0;
+	while(numbers[size])
+		size++;
+	return (size);
+}
+
+void	validate_convert_fill(int *arr, char **numbers, int size)
+{
+	int i;
+	long long value;
+
+	i = 0;
+	while (i < size)
 	{
 		if ((is_valid_number(numbers[i]) == 0))
 			print_error();
 		value = ft_atoll(numbers[i]);
 		if (is_inrange(value) == 0)
 			print_error();
-		// create node here
-		// add_to_stack((int)value);
+		arr[i] = (int)value;
 		i++;
 	}
-	//after converting to long long, do the dup check
 }
 
-int	is_valid_number(char *input)
-{
-	if (*input == '+' || *input == '-')
-		input++;
-	if (*input == '\0')
-		return (0);
-	while (*input)
-	{
-		if (!('0' <= *input && *input <= '9'))
-			return (0);
-		input++;
-	}
-	return (1);
-}
-
-int	is_inrange(long long n)
-{
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
-}
-
-int	is_duplicate(int *stack, int size, int value)
-{
-}
-
-void print_err(void)
+void print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(42); //any non zero value. return(0) = exit(0)
