@@ -34,23 +34,23 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 	stack_init(stack, arr, size, size);
 	free(arr);
 	if (argc == 2)
-    	free_split(numbers);
+		free_split(numbers);
 }
 
 int	count_size(char **numbers)
 {
-	int size;
+	int	size;
 
 	size = 0;
-	while(numbers[size])
+	while (numbers[size])
 		size++;
 	return (size);
 }
 
 void	validate_convert_fill(int *arr, char **numbers, int size)
 {
-	int i;
-	long long value;
+	int			i;
+	long long	value;
 
 	i = 0;
 	while (i < size)
@@ -65,7 +65,7 @@ void	validate_convert_fill(int *arr, char **numbers, int size)
 	}
 }
 
-void print_error(void)
+void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(42); //any non zero value. return(0) = exit(0)

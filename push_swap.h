@@ -22,11 +22,11 @@
 
 /* Parsing */
 void	parse_input(int argc, char **argv, t_stack *stack);
-int     count_size(char **numbers)
-void	validate_convert_fill(int *arr, char **numbers, int size)
-void    print_error(void);
-int     is_valid_number(char *input);
-int     is_inrange(long long n);
+int		count_size(char **numbers);
+void	validate_convert_fill(int *arr, char **numbers, int size);
+void	print_error(void);
+int		is_valid_number(char *input);
+int		is_inrange(long long n);
 void	is_duplicate(int *arr, int size);
 //atoll?
 

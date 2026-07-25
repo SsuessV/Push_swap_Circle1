@@ -1,5 +1,4 @@
 
-
 #include "push_swap.h"
 
 int	is_valid_number(char *input)
@@ -26,20 +25,19 @@ int	is_inrange(long long n)
 
 void	is_duplicate(int *arr, int size)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
 	while (i < size - 1)
-    {
-        j = i + 1;
-        while (j < size)
-        {
-            if(arr[i] == arr[j])
-                print_error();
-            j++;
-        }
-        i++;
-    }
-	
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] == arr[j])
+				print_error();
+			j++;
+		}
+		i++;
+	}
 }
