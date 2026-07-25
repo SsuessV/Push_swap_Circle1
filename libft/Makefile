@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsurilla <bsurilla@student.42vienna.c      +#+  +:+       +#+         #
+#    By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 20:33:41 by bsurilla          #+#    #+#              #
-#    Updated: 2026/05/28 22:35:10 by bsurilla         ###   ########.fr        #
+#    Updated: 2026/07/25 12:13:36 by suyoun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c \
+	  ft_atoll.c \
 	  ft_isalnum.c \
 	  ft_isascii.c \
 	  ft_isprint.c \

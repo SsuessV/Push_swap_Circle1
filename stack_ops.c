@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/25 12:16:52 by suyoun            #+#    #+#             */
+/*   Updated: 2026/07/25 12:17:24 by suyoun           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/* Swap ops*/
+#include "push_swap.h"
 
 void	sa(t_stack *stack_a)
 {
@@ -15,8 +26,6 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 
 }
-
-/* Push ops*/
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {

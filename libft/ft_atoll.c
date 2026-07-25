@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:00:55 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/25 12:12:08 by suyoun           ###   ########.fr       */
+/*   Created: 2026/07/25 12:15:57 by suyoun            #+#    #+#             */
+/*   Updated: 2026/07/25 12:16:01 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long	ft_atoll(const char *nptr)
 {
 	int			i;
 	int			sign;
 	long long	number;
+	int			digit;
 
 	i = 0;
-	while (nptr[i] == 32 || (nptr[i] <= 13 && nptr[i] >= 9))
-		i++;
 	sign = 1;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -29,9 +28,14 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	number = 0;
-	while (nptr[i] <= '9' && nptr[i] >= '0')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		number = number * 10 + (nptr[i] - '0');
+		digit = nptr[i] - '0';
+		if (sign == 1 && number > (LLONG_MAX - digit) / 10)
+			return (LLONG_MAX);
+		if (sign == -1 && number > (-(LLONG_MIN + digit)) / 10)
+			return (LLONG_MIN);
+		number = number * 10 + digit;
 		i++;
 	}
 	return (number * sign);
