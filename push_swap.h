@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/21 21:20:15 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 13:49:56 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	print_error(void);
 int		is_valid_number(char *input);
 int		is_inrange(long long n);
 void	is_duplicate(int *arr, int size);
-//atoll?
 
 /* Stack functions */
 
