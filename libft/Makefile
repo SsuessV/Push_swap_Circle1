@@ -6,7 +6,7 @@
 #    By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 20:33:41 by bsurilla          #+#    #+#              #
-#    Updated: 2026/07/25 12:13:36 by suyoun           ###   ########.fr        #
+#    Updated: 2026/07/25 12:49:17 by suyoun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,8 @@ SRC = ft_atoi.c \
 	  ft_lstclear.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
+	  ft_printf.c \
+	  ft_print_helpers.c \
 
 OBJ = $(SRC:.c=.o)
 
