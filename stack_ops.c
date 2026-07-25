@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:52 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/25 12:17:24 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 12:19:11 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_stack *stack_a)
 {
-
+    
 }
 
 void	sb(t_stack *stack_b)
@@ -24,7 +24,7 @@ void	sb(t_stack *stack_b)
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-
+    
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
