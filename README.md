@@ -24,7 +24,7 @@ This project was developed by:
   - Implemented input parsing
   - Handled argument validation and error checking
   - Integrated parsing with stack initialization
-  - Developed stack manipulation operations (Swap & Push)
+  - Developed stack manipulation operations
   -
 
 - Bea-Marie, Surilla (bsurilla)

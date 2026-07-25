@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/25 21:38:00 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 22:43:57 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,40 @@
 
 void	parse_input(int argc, char **argv, t_stack *stack)
 {
-	char		**numbers;
+	char		**substr;
 	int			*arr;
 	int			size;
 
-	numbers = NULL;
+	substr = NULL;
 	if (argc == 1)
 		return ;
 	if (argc == 2)
-		numbers = ft_split (argv[1], ' ');
+		substr = ft_split (argv[1], ' ');
 	else
-		numbers = &argv[1];
-	size = count_size(numbers);
+		substr = &argv[1];
+	size = count_size(substr);
 	arr = malloc(size * sizeof(int));
 	if (!arr)
 		print_error();
-	validate_convert_fill(arr, numbers, size);
+	validate_convert_fill(arr, substr, size);
 	is_duplicate(arr, size);
 	stack_init(stack, arr, size, size);
 	free(arr);
 	if (argc == 2)
-		free_split(numbers);
+		free_split(substr);
 }
 
-int	count_size(char **numbers)
+int	count_size(char **substr)
 {
 	int	size;
 
 	size = 0;
-	while (numbers[size])
+	while (substr[size])
 		size++;
 	return (size);
 }
 
-void	validate_convert_fill(int *arr, char **numbers, int size)
+void	validate_convert_fill(int *arr, char **substr, int size)
 {
 	int			i;
 	long long	value;
@@ -55,9 +55,9 @@ void	validate_convert_fill(int *arr, char **numbers, int size)
 	i = 0;
 	while (i < size)
 	{
-		if ((is_valid_number(numbers[i]) == 0))
+		if ((is_valid_number(substr[i]) == 0))
 			print_error();
-		value = ft_atoll(numbers[i]);
+		value = ft_atoll(substr[i]);
 		if (is_inrange(value) == 0)
 			print_error();
 		arr[i] = (int)value;
@@ -94,17 +94,17 @@ long long	ft_atoll(const char *nptr)
 	return (number * sign);
 }
 
-void	free_split(char **words)
+void	free_split(char **substr)
 {
 	int	i;
 
 	i = 0;
-	if (!words)
+	if (!substr)
 		return ;
-	while (words[i])
+	while (substr[i])
 	{
-		free(words[i]);
+		free(substr[i]);
 		i++;
 	}
-	free(words);
+	free(substr);
 }

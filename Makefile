@@ -9,7 +9,9 @@ INCLUDES = -Iincludes -Ilibft -Ift_printf
 LIBFT = libft/libft.a
 PRINTF = libft/libftprintf.a
 
-SRCS =	\
+SRCS =	input_parsing.c \
+		validation.c \
+		stack_ops.c \
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
