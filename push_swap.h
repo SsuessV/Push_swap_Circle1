@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/25 13:30:15 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/26 20:23:07 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ typedef struct s_stack
 
 
 /* Parsing */
-void	parse_input(int argc, char **argv, t_stack *stack);
+int		*parse_input(int argc, char **argv);
 int		count_size(char **numbers);
 void	validate_convert_fill(int *arr, char **numbers, int size);
 void	print_error(void);
 int		is_valid_number(char *input);
 int		is_inrange(long long n);
 void	is_duplicate(int *arr, int size);
+int		count_len(int *arr);
 //atoll?
 
 /* Stack functions */

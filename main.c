@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/24 17:01:01 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/26 20:30:22 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 // #include "libft/ft_printf.h"
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char **argv)
 {
     t_stack a;
     t_stack b;
-    int numbers[] = {8, 3, 4, 1};
-    int size = 4;
-    int capacity = 4;
+    int *numbers = parse_input(argc,argv);
+    int size = count_len(numbers);
+    int capacity = count_len(numbers);;
     
-    // number = parserfuction_numbers;#
     // size = function_of_size;
     // capacity = function_of_size; 
     stack_init(&a, numbers, size, capacity);
     stack_init(&b, NULL, 0, capacity);
+    free_arr(numbers);
     
 //   ---------- tests to see if the above works ------------ //
     

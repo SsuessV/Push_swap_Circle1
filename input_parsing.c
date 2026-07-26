@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/21 21:27:17 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/26 20:16:33 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parse_input(int argc, char **argv, t_stack *stack)
+int	*parse_input(int argc, char **argv)
 {
 	char		**numbers;
 	int			*arr;
@@ -20,7 +20,7 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 
 	numbers = NULL;
 	if (argc == 1)
-		return ;
+		return (NULL);
 	if (argc == 2)
 		numbers = ft_split (argv[1], ' ');
 	else
@@ -31,10 +31,9 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 		print_error();
 	validate_convert_fill(arr, numbers, size);
 	is_duplicate(arr, size);
-	stack_init(stack, arr, size, size);
-	free(arr);
 	if (argc == 2)
-		free_split(numbers);
+		free_split(numbers); 
+	return (arr);
 }
 
 int	count_size(char **numbers)

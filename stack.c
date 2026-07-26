@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/24 16:54:17 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/07/26 19:29:11 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    stack_init(t_stack *stack, int *numbers, int size, int capacity)
 {
     int i;
-
+    
     stack->size = size;
     stack->numbers = malloc(sizeof(int) * capacity);
     if (!stack->numbers)
