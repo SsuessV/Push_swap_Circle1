@@ -12,6 +12,7 @@ PRINTF = libft/libftprintf.a
 SRCS =	input_parsing.c \
 		validation.c \
 		ops_swap_push.c \
+		radix_sort.c \
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
