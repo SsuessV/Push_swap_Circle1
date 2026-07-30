@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/25 21:43:29 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/30 17:57:45 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,8 @@ void		pa(t_stack *stack_a, t_stack *stack_b);
 void		pb(t_stack *stack_a, t_stack *stack_b);
 
 /* Sorting */
+void		selection_sort(t_stack *stack_a, t_stack *stack_b);
+void		smallest_to_top(t_stack *stack_a);
+int			find_the_smallest(int *arr, int size);
 
 #endif
