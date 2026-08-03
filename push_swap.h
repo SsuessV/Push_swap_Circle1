@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 20:02:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/03 21:37:42 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,29 @@ typedef struct s_stack
 	int size;
 	int	capacity;
 } t_stack;
+
+typedef struct s_options
+{
+	int		strategy;
+	int		bench;
+
+	double	disorder;
+
+	int		total_ops;
+
+	int		sa_count;
+	int		sb_count;
+	int		ss_count;
+	int		pa_count;
+	int		pb_count;
+	int		ra_count;
+	int		rb_count;
+	int		rr_count;
+	int		rra_count;
+	int		rrb_count;
+	int		rrr_count;
+
+}	t_options;
 
 /* Parsing */
 void		parse_input(int argc, char **argv, t_stack *stack);
