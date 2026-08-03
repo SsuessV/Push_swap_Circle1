@@ -77,6 +77,7 @@ The Makefile will automatically compile the required source files and link the L
 * 42 Push_swap subject and project guidelines
 * Online references for the C Standard Library (cppreference.com, C documentation)
 * Manual pages (`man malloc`, `man free`, `man write`, `man exit`)
+* Grokking Algorithms_ An illustrated guide for programmers and other curious people-Manning Publications (2016) by Aditya Bhargava 
 * Resources about sorting algorithms and stack data structures
 * Tutorials and discussions about Push_swap strategies
 * Assistance and discussions with 42 students
