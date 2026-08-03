@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/25 12:16:31 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 21:38:22 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,10 @@ void	is_duplicate(int *arr, int size)
 		}
 		i++;
 	}
+}
+
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(42);
 }

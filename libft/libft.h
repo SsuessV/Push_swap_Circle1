@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:02:20 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/25 12:15:16 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/07/25 21:45:21 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ char		**ft_split(char const *s, char c);
 void		ft_striteri(char *s, void (*f) (unsigned int, char*));
 char		*ft_itoa(int n);
 int			ft_atoi(const char *nptr);
-long long	ft_atoll(const char *nptr);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_putendl_fd(char *s, int fd);
 t_list		*ft_lstnew(void *content);

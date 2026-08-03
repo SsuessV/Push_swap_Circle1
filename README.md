@@ -24,8 +24,8 @@ This project was developed by:
   - Implemented input parsing
   - Handled argument validation and error checking
   - Integrated parsing with stack initialization
-  - Developed stack manipulation operations (Swap & Push)
-  -
+  - Developed stack manipulation operations (sa, sb, ss & pa, pb)
+  - Implemented sorting algorithms (selection sort)
 
 - Bea-Marie, Surilla (bsurilla)
   - Designed and implemented stack structures
@@ -34,7 +34,6 @@ This project was developed by:
   -
   -
 
-- Both
 ---
 
 ## Instructions

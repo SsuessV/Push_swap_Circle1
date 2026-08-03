@@ -7,13 +7,20 @@ CFLAGS = -Wall -Wextra -Werror -MMD -MP
 INCLUDES = -Iincludes -Ilibft -Ift_printf
 
 LIBFT = libft/libft.a
-PRINTF = ft_printf/libftprintf.a
+PRINTF = libft/libftprintf.a
 
+<<<<<<< HEAD
 SRCS =	input_parsing_utils.c \
 		input_parsing.c\
 		main.c \
 		stack_ops.c \
 		validation.c \
+=======
+SRCS =	input_parsing.c \
+		validation.c \
+		ops_swap_push.c \
+		selection_sort.c \
+>>>>>>> main
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
