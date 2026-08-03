@@ -6,13 +6,13 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/03 18:45:58 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/03 20:09:02 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*parse_input(int argc, char **argv)
+void	parse_input(int argc, char **argv, t_stack *stack)
 {
 	char		**substr;
 	int			*arr;
@@ -20,7 +20,7 @@ int	*parse_input(int argc, char **argv)
 
 	substr = NULL;
 	if (argc == 1)
-		return (NULL);
+		return;
 	if (argc == 2)
 		substr = ft_split (argv[1], ' ');
 	else
@@ -31,6 +31,8 @@ int	*parse_input(int argc, char **argv)
 		print_error();
 	validate_convert_fill(arr, substr, size);
 	is_duplicate(arr, size);
+	stack_init(stack,arr, size, size);
+	free(arr);
 	if (argc == 2)
 		free_split(substr);
 }

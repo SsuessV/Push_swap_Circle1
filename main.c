@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 18:48:50 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/03 20:16:36 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@ int main(int argc, char **argv)
 {
     t_stack a;
     t_stack b;
-    int *numbers = parse_input(argc,argv);
-    int size = count_len(numbers);
-    int capacity = count_len(numbers);;
+    // int *numbers = parse_input(argc,argv,);
+    // int size = count_len(numbers);
+    // int capacity = count_len(numbers);
     
-    // size = function_of_size;
-    // capacity = function_of_size; 
-    stack_init(&a, numbers, size, capacity);
-    stack_init(&b, NULL, 0, capacity);
-    free_arr(numbers);
+    parse_input(argc, argv, &a);
+    stack_init(&b, NULL, 0, a.capacity);
     
 //   ---------- tests to see if the above works ------------ //
     
@@ -37,12 +34,14 @@ int i = 0;
         i++;
     }
     printf("\n");
-    printf("%d\n", a.size);
+    printf("a size: %d\n", a.size);
     // b.numbers[0] = 999;
     // b.numbers[1] = 0;
     // b.numbers[2] = 2;
     // b.numbers[3] = 6;
     
     // printf("%d\n",b.numbers[2]);
-    printf("%d\n",b.size);
+    printf("b size:%d\n",b.size);
+    printf("b capacity:%d\n",b.capacity);
+    printf("a capacity:%d\n",a.capacity);
 }

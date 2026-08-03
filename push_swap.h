@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 18:46:34 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/03 20:02:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 {
 	int	*numbers;
 	int size;
+	int	capacity;
 } t_stack;
 
 /* Parsing */
@@ -36,6 +37,8 @@ int			is_valid_number(char *input);
 int			is_inrange(long long n);
 void		is_duplicate(int *arr, int size);
 void		print_error(void);
+void		free_arr(int *arr);
+int			count_len(int *arr);
 
 /* Stack functions */
 void	stack_init(t_stack *stack, int *numbers, int size, int capacity);
