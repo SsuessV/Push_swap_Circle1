@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/03 20:09:02 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/03 21:35:29 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 
 	substr = NULL;
 	if (argc == 1)
-		return;
+		return ;
 	if (argc == 2)
 		substr = ft_split (argv[1], ' ');
 	else
@@ -31,7 +31,7 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 		print_error();
 	validate_convert_fill(arr, substr, size);
 	is_duplicate(arr, size);
-	stack_init(stack,arr, size, size);
+	stack_init(stack, arr, size, size);
 	free(arr);
 	if (argc == 2)
 		free_split(substr);
