@@ -21,11 +21,11 @@ The project focuses on algorithm design, data structures, optimization, and effi
 This project was developed by:
 
 - Su Jung, Youn (suyoun)
-  - Implemented input parsing
+  - Implemented input parsing (flags handling, )
   - Handled argument validation and error checking
   - Integrated parsing with stack initialization
   - Developed stack manipulation operations (sa, sb, ss & pa, pb)
-  - Implemented sorting algorithms (selection sort)
+  - Implemented sorting algorithms (selection sort & radix sort)
 
 - Bea-Marie, Surilla (bsurilla)
   - Designed and implemented stack structures
