@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 21:37:42 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/04 09:56:37 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	int	capacity;
 } t_stack;
 
-typedef struct s_options
+typedef struct s_options //change however u want, but please communicate it to me
 {
 	int		strategy;
 	int		bench;
