@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/05 21:41:02 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/05 21:43:50 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	t_stack	b;
 
 	parse_input(argc, argv, &a);
-	stack_init(&b, NULL, 0, a.capacity)
+	stack_init(&b, NULL, 0, a.capacity);
 //   ---------- tests to see if the above works ------------ //
 
 	int	i = 0;
