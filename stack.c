@@ -6,35 +6,35 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 19:47:52 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/05 18:03:53 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    stack_init(t_stack *stack, int *numbers, int size, int capacity)
+void	stack_init(t_stack *stack, int *numbers, int size, int capacity)
 {
-    int i;
-    
-    stack->capacity = capacity;
-    stack->size = size;
-    stack->numbers = malloc(sizeof(int) * capacity);
-    if (!stack->numbers)
-        return;
-    i = 0;
-    while (i < size)
-    {
-        stack->numbers[i] = numbers[i];
-        i++;        
-    }
-}
-void    stack_free(t_stack *stack)
-{
-    if (stack == NULL)
-    {
-        return;
-    }
-   	free(stack->numbers);
-    stack->numbers = NULL;
+	int	i;
+
+	stack->capacity = capacity;
+	stack->size = size;
+	stack->numbers = malloc(sizeof(int) * capacity);
+	if (!stack->numbers)
+		return ;
+	i = 0;
+	while (i < size)
+	{
+		stack->numbers[i] = numbers[i];
+		i++;
+	}
 }
 
+void	stack_free(t_stack *stack)
+{
+	if (stack == NULL)
+	{
+		return ;
+	}
+	free(stack->numbers);
+	stack->numbers = NULL;
+}

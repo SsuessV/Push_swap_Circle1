@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/03 21:37:42 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/05 21:30:19 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 typedef struct s_stack
 {
 	int	*numbers;
-	int size;
+	int	size;
 	int	capacity;
-} t_stack;
+}	t_stack;
 
 typedef struct s_options
 {
@@ -64,8 +64,8 @@ void		free_arr(int *arr);
 int			count_len(int *arr);
 
 /* Stack functions */
-void	stack_init(t_stack *stack, int *numbers, int size, int capacity);
-void    stack_free(t_stack *stack);
+void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
+void		stack_free(t_stack *stack);
 
 /* Stack Operations */
 void		sa(t_stack *stack_a);

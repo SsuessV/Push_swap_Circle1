@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:52 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/03 19:45:19 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/05 18:06:49 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	sa(t_stack *stack_a, t_options *options)
 	stack_a->numbers[1] = temp;
 	options->total_ops++;
 	options->sa_count++;
-
 	if (!options->bench)
 		write(1, "sa\n", 3);
 }
