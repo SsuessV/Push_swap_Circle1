@@ -6,13 +6,13 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/04 10:45:32 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/05 01:35:14 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void radix_sort(int num)
+void radix_sort(t_stack stack_a)
 {
-	
+
 }
 
 int	*copy_array(t_stack *stack)
@@ -32,7 +32,10 @@ int	*copy_array(t_stack *stack)
 	return (copied);
 }
 
-void sort_copied(int *array, int size)
+void normalize(int *array, int size)
 {
-	
+	int *copid;
+
+	copied = copy_array(original);
+	selection_sort(copied, );
 }
