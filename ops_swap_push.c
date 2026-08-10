@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ops_swap_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:52 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/05 18:06:49 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/10 21:17:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack_a, t_options *options)
+/* void	sa(t_stack *stack_a, t_options *options)
 {
 	int	temp;
 
@@ -25,9 +25,9 @@ void	sa(t_stack *stack_a, t_options *options)
 	options->sa_count++;
 	if (!options->bench)
 		write(1, "sa\n", 3);
-}
+} */
 
-void	sb(t_stack *stack_b)
+/* void	sb(t_stack *stack_b)
 {
 	int	temp;
 
@@ -36,37 +36,37 @@ void	sb(t_stack *stack_b)
 	temp = stack_b->numbers[0];
 	stack_b->numbers[0] = stack_b->numbers[1];
 	stack_b->numbers[1] = temp;
-}
+} */
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+/* void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
-}
+} */
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+/* void	pa(t_stack *stack1, t_stack *stack2)
 {
 	int	i;
 
-	if (stack_b->size == 0)
+	if (stack2->size == 0)
 		return ;
-	i = stack_a->size;
+	i = stack1->size;
 	while (i > 0)
 	{
-		stack_a->numbers[i] = stack_a->numbers[i - 1];
+		stack1->numbers[i] = stack1->numbers[i - 1];
 		i--;
 	}
-	stack_a->numbers[0] = stack_b->numbers[0];
+	stack1->numbers[0] = stack2->numbers[0];
 	i = 0;
-	while (i < stack_b->size - 1)
+	while (i < stack2->size - 1)
 	{
-		stack_b->numbers[i] = stack_b->numbers[i + 1];
+		stack2->numbers[i] = stack2->numbers[i + 1];
 		i++;
 	}
-	stack_a->size++;
-	stack_b->size--;
-}
-
+	stack1->size++;
+	stack2->size--;
+} */
+/* 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	int	i;
@@ -88,4 +88,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_b->size++;
 	stack_a->size--;
-}
+} */
