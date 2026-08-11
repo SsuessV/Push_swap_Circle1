@@ -6,11 +6,11 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 20:20:58 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/26 20:25:10 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 19:39:22 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+/* #include "push_swap.h"
 
 int	count_len(int *arr)
 {
@@ -25,4 +25,4 @@ int	count_len(int *arr)
 void	free_arr(int *arr)
 {
 	free(arr);
-}
+} */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/05 21:30:19 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 19:37:38 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void		stack_free(t_stack *stack);
 
 /* Stack Operations */
-void		sa(t_stack *stack_a);
-void		sb(t_stack *stack_b);
-void		ss(t_stack *stack_a, t_stack *stack_b);
-void		pa(t_stack *stack_a, t_stack *stack_b);
-void		pb(t_stack *stack_a, t_stack *stack_b);
-
+void		swap(t_stack *stack);
+void		double_swap(t_stack *stack_a, t_stack *stack_b);
+void		push(t_stack *stack_dst, t_stack *stack_src);
+void		rotate(t_stack *stack);
+void		double_rotate(t_stack *stack_a, t_stack *stack_b);
+void		reverse_rotate(t_stack *stack);
+void		double_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		smallest_to_top(t_stack *stack_a);

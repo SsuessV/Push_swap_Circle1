@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 20:21:06 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 08:54:50 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 19:35:06 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ void	swap(t_stack *stack)
 	stack->numbers[1] = temp;
 }
 
-void	push(t_stack *stack1, t_stack *stack2)
+void	push(t_stack *stack_dst, t_stack *stack_src)
 {
 	int	i;
 
-	if (stack2->size == 0)
+	if (stack_src->size == 0)
 		return ;
-	i = stack1->size;
+	i = stack_dst->size;
 	while (i > 0)
 	{
-		stack1->numbers[i] = stack1->numbers[i - 1];
+		stack_dst->numbers[i] = stack_dst->numbers[i - 1];
 		i--;
 	}
-	stack1->numbers[0] = stack2->numbers[0];
+	stack_dst->numbers[0] = stack_src->numbers[0];
 	i = 0;
-	while (i < stack2->size - 1)
+	while (i < stack_src->size - 1)
 	{
-		stack2->numbers[i] = stack2->numbers[i + 1];
+		stack_src->numbers[i] = stack_src->numbers[i + 1];
 		i++;
 	}
-	stack1->size++;
-	stack2->size--;
+	stack_dst->size++;
+	stack_src->size--;
 }
 
 void	rotate(t_stack *stack)
