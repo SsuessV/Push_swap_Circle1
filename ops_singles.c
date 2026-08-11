@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 20:21:06 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 19:35:06 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 21:27:57 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rotate(t_stack *stack)
 	int	temp;
 	int	i;
 	
-	if (!stack || stack->size < 1)
+	if (!stack || stack->size < 3)
 	return ;
 	i = 0;
 	temp = stack->numbers[0];
@@ -68,7 +68,7 @@ void	reverse_rotate(t_stack *stack)
 	int	temp;
 	int i;
 	
-	if (!stack || stack->size < 1)
+	if (!stack || stack->size < 3)
 		return ;
 	i = stack->size - 1;
 	temp = stack->numbers[i];

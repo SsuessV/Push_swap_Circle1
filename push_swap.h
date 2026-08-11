@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 19:37:38 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 20:52:21 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "libft/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 
 # include <unistd.h>
 # include <stdlib.h>
