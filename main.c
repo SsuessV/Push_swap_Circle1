@@ -6,25 +6,14 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 21:52:31 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/11 22:06:27 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
 
-
-int	main(int argc, char **argv)
-{
-	t_stack	a;
-	t_stack	b;
-
-	parse_input(argc, argv, &a);
-	stack_init(&b, NULL, 0, a.capacity);
-//   ---------- parsing and stack initializing test ------------ //
-
-	
-	void	print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 	{
 		int	i;
 		ft_printf("size: %d\ncapacity: %d\n", stack->size, stack->capacity);
@@ -36,6 +25,15 @@ int	main(int argc, char **argv)
 		}
 		ft_printf("\n");
 	}
+
+int	main(int argc, char **argv)
+{
+	t_stack	a;
+	t_stack	b;
+
+	parse_input(argc, argv, &a);
+	stack_init(&b, NULL, 0, a.capacity);
+//   ---------- parsing and stack initializing test ------------ //
 	
 	ft_printf("STACK A\n");
 	print_stack(&a);
