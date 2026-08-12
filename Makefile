@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -MMD -MP
 INCLUDES = -Iincludes -Ilibft -Ift_printf
 
 LIBFT = libft/libft.a
-PRINTF = libft/libftprintf.a
+PRINTF = ft_printf/libftprintf.a
 
 SRCS =	input_parsing.c\
 		main.c \

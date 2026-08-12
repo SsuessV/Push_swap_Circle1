@@ -6,13 +6,13 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:51:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 17:42:17 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/12 19:08:56 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	calculate_disorder(t_stack *stack)
+double	calculate_disorder(t_stack *stack)
 {
 	int		inversions;
 	int		pairs;
@@ -24,7 +24,7 @@ float	calculate_disorder(t_stack *stack)
 	if (pairs == 0)
 		return (0);	
 	inversions = count_inversions(stack);
-	disorder = (float)inversions / pairs;
+	disorder = (double)inversions / pairs;
 	return (disorder);
 }
 
