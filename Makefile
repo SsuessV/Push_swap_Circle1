@@ -11,10 +11,10 @@ PRINTF = ft_printf/libftprintf.a
 
 SRCS =	input_parsing.c\
 		main.c \
-		ops_doubles.C \
+		ops_doubles.c \
 		ops_singles.c \
 		selection_sort.c \
-		stack_ops.c \
+		stack.c \
 		validation.c \
 		disorder.c \
 

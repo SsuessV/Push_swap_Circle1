@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 20:06:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/12 21:53:16 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int	main(int argc, char **argv)
 	stack_init(&b, NULL, 0, a.capacity);
 //   ---------- parsing and stack initializing test ------------ //
 	
-	/* ft_printf("STACK A\n") */;
-	/* print_stack(&a); */
-	/* ft_printf("\n"); */
-	/* ft_printf("STACK B\n") */;
-	/* print_stack(&b); */
-	/* ft_printf("\n"); */
+	ft_printf("STACK A\n");
+	print_stack(&a);
+	ft_printf("\n");
+	ft_printf("STACK B\n");
+	print_stack(&b);
+	ft_printf("\n");
 	ft_printf("\n");
 	
 //   ------------------- operations test -------------------- //
