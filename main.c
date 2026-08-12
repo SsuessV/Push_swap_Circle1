@@ -6,12 +6,13 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 22:06:27 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/12 18:00:19 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
+#include <stdio.h>
 
 void	print_stack(t_stack *stack)
 	{
@@ -43,7 +44,7 @@ int	main(int argc, char **argv)
 	ft_printf("\n");
 	ft_printf("\n");
 	
-	//   ---------------- operations test ----------------- //
+//   ------------------- operations test -------------------- //
 	
 	/* ft_printf("BEFORE sa:\n");
 	print_stack(&a);
@@ -114,7 +115,12 @@ int	main(int argc, char **argv)
 	print_stack(&b);
 	ft_printf("\n"); */
 
-	selection_sort(&a, &b);
+//   ------------------- disorder test -------------------- //
+	printf("disorder: %.2f %%", calculate_disorder(&a));
+	
+//   ------------------- algorithm test -------------------- //
+
+/* 	selection_sort(&a, &b);
 	print_stack(&a);
-	print_stack(&b);
+	print_stack(&b); */
 }

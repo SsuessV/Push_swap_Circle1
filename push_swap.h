@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 20:52:21 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:41:59 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ void		rotate(t_stack *stack);
 void		double_rotate(t_stack *stack_a, t_stack *stack_b);
 void		reverse_rotate(t_stack *stack);
 void		double_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+
+/* disorder */
+float		calculate_disorder(t_stack *stack);
+int			count_inversions(t_stack *stack);
+
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		smallest_to_top(t_stack *stack_a);
