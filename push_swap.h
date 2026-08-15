@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 19:09:04 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/15 20:03:08 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@
 # include <stdlib.h>
 # include <limits.h>
 
+typedef	struct s_numbers
+{
+	int	value;
+	int	rank;
+}	t_numbers;
+
 typedef struct s_stack
 {
-	int	*numbers;
-	int	size;
-	int	capacity;
+	t_numbers	*numbers;
+	int			size;
+	int			capacity;
 }	t_stack;
 
 typedef struct s_options
@@ -66,7 +72,7 @@ int			count_len(int *arr);
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void		stack_free(t_stack *stack);
-
+void		rank(t_stack *stack);
 /* Stack Operations */
 void		swap(t_stack *stack);
 void		double_swap(t_stack *stack_a, t_stack *stack_b);

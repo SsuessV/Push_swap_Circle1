@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:51:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 19:08:56 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/15 19:34:39 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ double	calculate_disorder(t_stack *stack)
 {
 	int		inversions;
 	int		pairs;
-	float	disorder;
+	double	disorder;
 	
 	if (!stack)
 		return (0);
@@ -41,7 +41,7 @@ int	count_inversions(t_stack *stack)
 	{
 		while(j < stack->size)
 		{
-			if(stack->numbers[i] > stack->numbers[j])
+			if(stack->numbers[i].rank > stack->numbers[j].rank)
 				inversions++;
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 20:21:06 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/11 21:27:57 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/15 19:04:31 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(t_stack *stack)
 {
-	int	temp;
+	t_numbers	temp;
 
 	if (!stack || stack->size < 2)
 		return ;
@@ -27,6 +27,8 @@ void	push(t_stack *stack_dst, t_stack *stack_src)
 {
 	int	i;
 
+	if (!stack_dst || !stack_src)
+		return ;
 	if (stack_src->size == 0)
 		return ;
 	i = stack_dst->size;
@@ -48,10 +50,10 @@ void	push(t_stack *stack_dst, t_stack *stack_src)
 
 void	rotate(t_stack *stack)
 {
-	int	temp;
-	int	i;
+	t_numbers	temp;
+	int			i;
 	
-	if (!stack || stack->size < 3)
+	if (!stack || stack->size < 2)
 	return ;
 	i = 0;
 	temp = stack->numbers[0];
@@ -65,10 +67,10 @@ void	rotate(t_stack *stack)
 
 void	reverse_rotate(t_stack *stack)
 {
-	int	temp;
-	int i;
+	t_numbers	temp;
+	int 		i;
 	
-	if (!stack || stack->size < 3)
+	if (!stack || stack->size < 2)
 		return ;
 	i = stack->size - 1;
 	temp = stack->numbers[i];

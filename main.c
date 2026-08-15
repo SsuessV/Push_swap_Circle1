@@ -6,26 +6,25 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 21:53:16 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/15 20:18:06 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
-// #include <stdio.h>
 
 void	print_stack(t_stack *stack)
-	{
+{
 		int	i;
 		ft_printf("size: %d\ncapacity: %d\n", stack->size, stack->capacity);
 		i = 0;
 		while (i < stack->size)
 		{
-			ft_printf("%d ", stack->numbers[i]);
+			ft_printf("value: %d, rank %d\n", stack->numbers[i].value, stack->numbers[i].rank);
 			i++;
 		}
 		ft_printf("\n");
-	}
+}
 
 int	main(int argc, char **argv)
 {
