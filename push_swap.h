@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/15 20:03:08 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/16 19:31:31 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,8 @@ int			count_inversions(t_stack *stack);
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		smallest_to_top(t_stack *stack_a);
 int			find_the_smallest(int *arr, int size);
+
+/* chunk sort */
+int			ft_sqrt(t_stack *stack, int size);
 
 #endif
