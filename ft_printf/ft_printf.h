@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 00:31:22 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/07/23 21:16:07 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/12 18:58:55 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_putnbr(int n);
 int		ft_putnbr_u(unsigned int u);
 int		ft_putnbr_hex(unsigned long n, char *hex);
 int		ft_putptr(void *ptr);
+int	    ft_putfloat(double n);
 
 #endif

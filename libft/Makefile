@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+         #
+#    By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 20:33:41 by bsurilla          #+#    #+#              #
-#    Updated: 2026/07/25 21:44:54 by suyoun           ###   ########.fr        #
+#    Updated: 2026/08/11 20:49:29 by bsurilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,6 @@ SRC = ft_atoi.c \
 	  ft_lstclear.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
-	  ft_printf.c \
-	  ft_print_helpers.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -72,7 +70,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME)e
 
 re: fclean all
 

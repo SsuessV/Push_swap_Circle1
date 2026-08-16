@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selection_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/07/30 16:45:52 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/15 20:02:00 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->size > 0)
 	{
 		smallest_to_top(stack_a);
-		pb(stack_a, stack_b);
+		push(stack_a, stack_b);
 	}
 	while (stack_b->size > 0)
-		pa(stack_a, stack_b);
+		push(stack_b, stack_a);
 }
 
 void	smallest_to_top(t_stack *stack_a)
@@ -30,18 +30,18 @@ void	smallest_to_top(t_stack *stack_a)
 	int	size;
 
 	size = stack_a->size;
-	min_index = find_the_smallest(stack_a->numbers, size);
+	min_index = find_the_smallest(&stack_a->numbers->rank, size);
 	if (min_index <= size / 2)
 	{
 		rotations = min_index;
 		while (rotations--)
-			ra(stack_a);
+			rotate(stack_a);
 	}
 	else
 	{
 		rotations = size - min_index;
 		while (rotations--)
-			rra(stack_a);
+			reverse_rotate(stack_a);
 	}
 }
 

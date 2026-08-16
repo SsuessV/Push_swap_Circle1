@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/04 09:56:37 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/16 19:50:44 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "libft/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
 
+typedef	struct s_numbers
+{
+	int	value;
+	int	rank;
+}	t_numbers;
+
 typedef struct s_stack
 {
-	int	*numbers;
-	int size;
-	int	capacity;
-} t_stack;
+	t_numbers	*numbers;
+	int			size;
+	int			capacity;
+}	t_stack;
 
 typedef struct s_options //change however u want, but please communicate it to me
 {
@@ -64,15 +70,21 @@ void		free_arr(int *arr);
 int			count_len(int *arr);
 
 /* Stack functions */
-void	stack_init(t_stack *stack, int *numbers, int size, int capacity);
-void    stack_free(t_stack *stack);
-
+void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
+void		stack_free(t_stack *stack);
+void		rank(t_stack *stack);
 /* Stack Operations */
-void		sa(t_stack *stack_a);
-void		sb(t_stack *stack_b);
-void		ss(t_stack *stack_a, t_stack *stack_b);
-void		pa(t_stack *stack_a, t_stack *stack_b);
-void		pb(t_stack *stack_a, t_stack *stack_b);
+void		swap(t_stack *stack);
+void		double_swap(t_stack *stack_a, t_stack *stack_b);
+void		push(t_stack *stack_dst, t_stack *stack_src);
+void		rotate(t_stack *stack);
+void		double_rotate(t_stack *stack_a, t_stack *stack_b);
+void		reverse_rotate(t_stack *stack);
+void		double_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+
+/* disorder */
+double		calculate_disorder(t_stack *stack);
+int			count_inversions(t_stack *stack);
 
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
