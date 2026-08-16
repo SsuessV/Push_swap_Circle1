@@ -6,16 +6,18 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/16 19:52:25 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/16 21:11:40 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	
 }
 
-int *copy_array(int *array, int size)
+int *copy_values(t_numbers *numbers, int size)
 {
 	int	*copied;
 	int	i;
@@ -26,24 +28,36 @@ int *copy_array(int *array, int size)
 	i = 0;
 	while (i < size)
 	{
-		copied[i] = array[i];
+		copied[i] = numbers[i].value;
 		i++;
 	}
 	return (copied);
 }
 
-void normalize(int *array, int size)
+void normalize(t_numbers *numbers, int size)
 {
-	int *copied;
-	t_stack temp;
+	int	*copied;
+	int	i;
 
-	copied = copy_array(array, size);
-	temp.numbers = copied;
-	temp.size = size;
-	selection_sort(&temp, size);
+	copied = copy_values(numbers, size); //copy the array for the presorting
+	if (!copied)
+		return ;
+	selection_sort_array(copied, size); //sort the numbers inside the copied array
+	i = 0;
+	while (i < size) //find n store each values rank in the struct
+	{
+		numbers[i].rank = find_rank(numbers[i].value, sorted, size);
+		i++;
+	}
+	free(copied);
+}
+
+int find_rank(int value, int *sorted, int size)
+{
+	
 }
 
 void selection_sort_array(int *array, int size)
 {
-
+	
 }
