@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/17 14:38:18 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/17 15:56:00 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 
 int	count_bits(int size)
 {
-	int	bit;
+	int	count;
 
-	bit = 0;
+	count = 0;
 	size--;
 	while (size > 0)
 	{
 		size >>= 1;
-		bit++;
+		count++;
 	}
-	return (bit);
+	return (count);
 }
