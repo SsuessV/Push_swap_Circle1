@@ -17,10 +17,10 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->size > 0)
 	{
 		smallest_to_top(stack_a);
-		push(stack_a, stack_b);
+		push(stack_b, stack_a);
 	}
 	while (stack_b->size > 0)
-		push(stack_b, stack_a);
+		push(stack_a, stack_b);
 }
 
 void	smallest_to_top(t_stack *stack_a)
