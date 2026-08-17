@@ -9,15 +9,18 @@ INCLUDES = -Iincludes -Ilibft -Ift_printf
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 
-SRCS =	input_parsing.c\
+SRCS =	assign_ranks.c \
+		disorder.c \
+		input_parsing.c\
 		main.c \
 		ops_doubles.c \
 		ops_singles.c \
+		radix_sort.c \
 		selection_sort.c \
 		stack.c \
 		validation.c \
-		disorder.c \
-		rank.c \
+		
+		
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)

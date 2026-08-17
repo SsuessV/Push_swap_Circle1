@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/16 19:50:44 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/17 10:07:39 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ int			count_len(int *arr);
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void		stack_free(t_stack *stack);
-void		rank(t_stack *stack);
+void		assign_ranks(t_stack *stack);
+
 /* Stack Operations */
 void		swap(t_stack *stack);
 void		double_swap(t_stack *stack_a, t_stack *stack_b);

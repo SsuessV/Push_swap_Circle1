@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rank.c                                             :+:      :+:    :+:   */
+/*   assign_ranks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 19:09:38 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/15 19:50:24 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/17 10:04:58 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rank(t_stack *stack)
+void	assign_ranks(t_stack *stack)
 {
     int i;
     int j;
