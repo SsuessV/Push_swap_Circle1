@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/16 20:17:05 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/18 17:16:51 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	smallest_to_top(t_stack *stack_a)
 	}
 }
 
-int find_the_smallest(t_numbers *numbers, int size)
+int	find_the_smallest(t_numbers *numbers, int size)
 {
 	int	i;
 	int	smallest;

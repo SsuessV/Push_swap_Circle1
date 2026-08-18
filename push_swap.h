@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/17 10:07:39 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/18 17:16:13 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int			count_inversions(t_stack *stack);
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		smallest_to_top(t_stack *stack_a);
-int			find_the_smallest(int *arr, int size);
+int			find_the_smallest(t_numbers *numbers, int size);
+int			count_bits(int max_rank);
+void		radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif
