@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 14:40:01 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 15:32:22 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	move_chunks_to_b (t_stack *stack_a, t_stack *stack_b)
 		else
 		{
 			get_to_top(stack_a, current);
-			push(stack_b, stack_a);	
+			butterfly_push(stack_a, stack_b, start, end);	
 		}	
 	}
 }
@@ -83,3 +83,20 @@ void	get_to_top(t_stack *stack, int selected_index)
 	}
 }
 
+void	butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end)
+{
+	int	middle;
+	int atop;
+	
+	if	(!stack_a || !stack_b || stack_a->size == 0)
+		return ;
+	middle = (start + end) / 2;
+	atop = stack_a->numbers[0].rank;
+	if (atop >= middle)
+		push(stack_b, stack_a);
+	else
+	{
+		push(stack_b, stack_a);
+		rotate(stack_b);
+	}		
+}
