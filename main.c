@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/15 20:18:06 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:49:33 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,4 +122,14 @@ int	main(int argc, char **argv)
 /* 	selection_sort(&a, &b);
 	print_stack(&a);
 	print_stack(&b); */
+	
+	chunk_sort(&a, &b);
+	ft_printf("Stack A:\n");
+	print_stack(&a);
+	ft_printf("\n");
+	ft_printf("Stack B:\n");
+	print_stack(&b);
+	ft_printf("\n");
+	ft_printf("disorder: %f%%", calculate_disorder(&a));
+	ft_printf("\n");
 }
