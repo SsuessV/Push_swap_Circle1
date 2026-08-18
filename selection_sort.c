@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selection_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/15 20:02:00 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:16:51 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->size > 0)
 	{
 		smallest_to_top(stack_a);
-		push(stack_a, stack_b);
+		push(stack_b, stack_a);
 	}
 	while (stack_b->size > 0)
-		push(stack_b, stack_a);
+		push(stack_a, stack_b);
 }
 
 void	smallest_to_top(t_stack *stack_a)
@@ -30,7 +30,7 @@ void	smallest_to_top(t_stack *stack_a)
 	int	size;
 
 	size = stack_a->size;
-	min_index = find_the_smallest(&stack_a->numbers->rank, size);
+	min_index = find_the_smallest(stack_a->numbers, size);
 	if (min_index <= size / 2)
 	{
 		rotations = min_index;
@@ -45,20 +45,20 @@ void	smallest_to_top(t_stack *stack_a)
 	}
 }
 
-int	find_the_smallest(int *arr, int size)
+int	find_the_smallest(t_numbers *numbers, int size)
 {
 	int	i;
 	int	smallest;
 	int	min_index;
 
 	i = 1;
-	smallest = arr[0];
+	smallest = numbers[0].rank;
 	min_index = 0;
 	while (i < size)
 	{
-		if (smallest > arr[i])
+		if (smallest > numbers[i].rank)
 		{
-			smallest = arr[i];
+			smallest = numbers[i].rank;
 			min_index = i;
 		}
 		i++;

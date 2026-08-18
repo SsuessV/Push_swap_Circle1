@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 17:42:05 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:58:47 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack
 	int			capacity;
 }	t_stack;
 
-typedef struct s_options
+typedef struct s_options //change however u want, but please communicate it to me
 {
 	int		strategy;
 	int		bench;
@@ -72,7 +72,8 @@ int			count_len(int *arr);
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void		stack_free(t_stack *stack);
-void		rank(t_stack *stack);
+void		assign_ranks(t_stack *stack);
+
 /* Stack Operations */
 void		swap(t_stack *stack);
 void		double_swap(t_stack *stack_a, t_stack *stack_b);
@@ -89,7 +90,9 @@ int			count_inversions(t_stack *stack);
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		smallest_to_top(t_stack *stack_a);
-int			find_the_smallest(int *arr, int size);
+int			find_the_smallest(t_numbers *numbers, int size);
+int			count_bits(int max_rank);
+void		radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 /* chunk sort */
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b);
