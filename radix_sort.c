@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/18 16:40:15 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/18 23:27:45 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 	int	rank;
 	int	size;
 
-	assign_ranks(stack_a);
+	//assign_ranks(stack_a); ranks are already assigned when the stacks are initiated.
 	size = stack_a->size;
 	max_bit = count_bits(size);
 	bit = 0;
@@ -29,13 +29,13 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 		while (rank < size)
 		{
 			if ((stack_a->numbers[0].rank >> bit & 1) == 0)
-				push(stack_b, stack_a); //if the last bit is 0 push to b
+				pb(stack_b, stack_a); //if the last bit is 0 push to b
 			else
-				rotate(stack_a); //if its 1 ra (bc we pushed it to b)
+				ra(stack_a); //if its 1 ra (bc we pushed it to b)
 			rank++;
 		}
 		while (stack_b->size > 0)
-			push(stack_a, stack_b);//push all back to a
+			pa(stack_a, stack_b);//push all back to a
 		bit++;
 	}
 }

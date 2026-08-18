@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 16:58:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 17:29:39 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 23:07:11 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	back_to_a(t_stack *stack_a, t_stack *stack_b)
 	while (stack_b->size > 0)
 	{
 		current = largest_rank (stack_b);
-		get_to_top(stack_b, current);
-		push(stack_a, stack_b);
+		get_to_top(stack_b, current, 'b');
+		pa(stack_a, stack_b);
 	}
 }
 

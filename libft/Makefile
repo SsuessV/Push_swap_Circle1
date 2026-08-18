@@ -6,7 +6,7 @@
 #    By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 20:33:41 by bsurilla          #+#    #+#              #
-#    Updated: 2026/08/11 20:49:29 by bsurilla         ###   ########.fr        #
+#    Updated: 2026/08/18 23:48:34 by bsurilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)e
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 15:32:22 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/18 23:12:10 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	move_chunks_to_b (t_stack *stack_a, t_stack *stack_b)
 		}
 		else
 		{
-			get_to_top(stack_a, current);
+			get_to_top(stack_a, current, 'a');
 			butterfly_push(stack_a, stack_b, start, end);	
 		}	
 	}
@@ -63,23 +63,31 @@ int	current_selection(t_stack *stack, int start, int end)
 	return (selected_index);
 }
 
-void	get_to_top(t_stack *stack, int selected_index)
+void	get_to_top(t_stack *stack, int selected_index, char c)
 {
-	int	rotations;
-	
+	int		rotations;
+
 	if (!stack || selected_index < 0)
 		return ;
 	if (selected_index <= stack->size / 2)
 	{
 		rotations = selected_index;
 		while (rotations--)
-			rotate(stack);
+		{
+			if (c == 'a')
+				ra(stack);
+			rb(stack);
+		}
 	}
 	else
 	{
 		rotations = stack->size - selected_index;
 		while (rotations--)
-			reverse_rotate(stack);
+		{
+			if (c == 'a')
+				rra(stack);
+			rrb(stack);
+		}
 	}
 }
 
@@ -93,10 +101,10 @@ void	butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end)
 	middle = (start + end) / 2;
 	atop = stack_a->numbers[0].rank;
 	if (atop >= middle)
-		push(stack_b, stack_a);
+		pb(stack_b, stack_a);
 	else
 	{
-		push(stack_b, stack_a);
-		rotate(stack_b);
+		pb(stack_b, stack_a);
+		rb(stack_b);
 	}		
 }

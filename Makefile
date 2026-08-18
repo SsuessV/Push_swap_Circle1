@@ -22,6 +22,9 @@ SRCS =	assign_ranks.c \
 		chunk_sort.c \
 		cs_move_to_b.c \
 		cs_back_to_a.c \
+		ops_commands_1.c \
+		ops_commands_2.c \
+		
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)

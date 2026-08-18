@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selection_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/18 17:16:51 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/18 23:41:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->size > 0)
 	{
 		smallest_to_top(stack_a);
-		push(stack_b, stack_a);
+		pb(stack_b, stack_a);
 	}
 	while (stack_b->size > 0)
-		push(stack_a, stack_b);
+		pa(stack_a, stack_b);
 }
 
 void	smallest_to_top(t_stack *stack_a)
@@ -35,13 +35,13 @@ void	smallest_to_top(t_stack *stack_a)
 	{
 		rotations = min_index;
 		while (rotations--)
-			rotate(stack_a);
+			ra(stack_a);
 	}
 	else
 	{
 		rotations = size - min_index;
 		while (rotations--)
-			reverse_rotate(stack_a);
+			rra(stack_a);
 	}
 }
 
