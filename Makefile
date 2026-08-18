@@ -19,8 +19,6 @@ SRCS =	assign_ranks.c \
 		selection_sort.c \
 		stack.c \
 		validation.c \
-		disorder.c \
-		rank.c \
 		chunk_sort.c \
 		cs_move_to_b.c \
 		cs_back_to_a.c \
