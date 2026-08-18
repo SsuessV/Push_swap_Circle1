@@ -18,7 +18,8 @@ SRCS =	input_parsing.c\
 		validation.c \
 		disorder.c \
 		rank.c \
-		chunk_sort.c \
+		cs_range.c \
+		cs_move_to_b.c \
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
