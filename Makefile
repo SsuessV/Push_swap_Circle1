@@ -11,20 +11,20 @@ PRINTF = ft_printf/libftprintf.a
 
 SRCS =	assign_ranks.c \
 		disorder.c \
+		input_parsing.c \
+		input_validation.c \
 		main.c \
 		ops_doubles.c \
 		ops_singles.c \
 		radix_sort.c \
 		selection_sort.c \
 		stack.c \
-		validation.c \
 		chunk_sort.c \
 		cs_move_to_b.c \
 		cs_back_to_a.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
 		flags.c \
-		input_parsing_helpers.c \
 		
 
 OBJS = $(SRCS:.c=.o)
