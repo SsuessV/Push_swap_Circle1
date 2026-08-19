@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 22:13:16 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 22:57:26 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int			ft_sqrt(int size);
 void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b);
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c);
-void		butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end);
+void		butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end); //line too long
 void		back_to_a(t_stack *stack_a, t_stack *stack_b);
 int			largest_rank(t_stack *stack);
 
