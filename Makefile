@@ -11,7 +11,6 @@ PRINTF = ft_printf/libftprintf.a
 
 SRCS =	assign_ranks.c \
 		disorder.c \
-		input_parsing.c\
 		main.c \
 		ops_doubles.c \
 		ops_singles.c \

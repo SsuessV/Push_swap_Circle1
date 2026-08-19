@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 11:28:16 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 12:57:25 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 21:23:38 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	valid_strategy(char *argv, t_info *info)
 		info->strategy = 2;
 		return (1);
 	}
-	if (ft_strncmp(argv, "--complex",10) == 0)
+	if (ft_strncmp(argv, "--complex", 10) == 0)
 	{
 		info->strategy = 3;
 		return (1);
@@ -65,4 +65,4 @@ int	starting_index(int argc, char **argv, t_info *info)
 		i++;
 	}
 	return (i);
-}	
+}
