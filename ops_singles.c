@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ops_singles.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 20:21:06 by bsurilla          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/08/19 20:04:47 by bsurilla         ###   ########.fr       */
+=======
+/*   Updated: 2026/08/19 20:43:39 by suyoun           ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +56,12 @@ void	rotate(t_stack *stack)
 {
 	t_numbers	temp;
 	int			i;
-	
+
 	if (!stack || stack->size < 2)
-	return ;
+		return ;
 	i = 0;
 	temp = stack->numbers[0];
-	while(i < stack->size - 1)
+	while (i < stack->size - 1)
 	{
 		stack->numbers[i] = stack->numbers[i + 1];
 		i++;
@@ -68,13 +72,13 @@ void	rotate(t_stack *stack)
 void	reverse_rotate(t_stack *stack)
 {
 	t_numbers	temp;
-	int 		i;
-	
+	int			i;
+
 	if (!stack || stack->size < 2)
 		return ;
 	i = stack->size - 1;
 	temp = stack->numbers[i];
-	while(i > 0)
+	while (i > 0)
 	{
 		stack->numbers[i] = stack->numbers[i - 1];
 		i--;

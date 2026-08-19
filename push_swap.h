@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/08/19 21:26:17 by bsurilla         ###   ########.fr       */
+=======
+/*   Updated: 2026/08/19 20:59:10 by suyoun           ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +24,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef	struct s_numbers
+typedef struct s_numbers
 {
 	int	value;
 	int	rank;
@@ -109,7 +113,11 @@ void		radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);
+<<<<<<< HEAD
 void		move_chunks_to_b (t_stack *stack_a, t_stack *stack_b, t_info *info);
+=======
+void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b);
+>>>>>>> main
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c, t_info *info);
 void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);

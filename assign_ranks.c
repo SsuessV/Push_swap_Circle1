@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 19:09:38 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/17 10:04:58 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 20:36:50 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	assign_ranks(t_stack *stack)
 {
-    int i;
-    int j;
-    int ranking;
-    
+	int	i;
+	int	j;
+	int	ranking;
+
 	if (!stack)
 		return ;
 	i = 0;
@@ -28,10 +28,10 @@ void	assign_ranks(t_stack *stack)
 		while (j < stack->size)
 		{
 			if (stack->numbers[i].value > stack->numbers[j].value)
-        		ranking++;
-        	j++;
-    	}
-    	stack->numbers[i].rank = ranking;
-    	i++;
-    }
+				ranking++;
+			j++;
+		}
+		stack->numbers[i].rank = ranking;
+		i++;
+	}
 }

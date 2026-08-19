@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/08/19 20:01:30 by bsurilla         ###   ########.fr       */
+=======
+/*   Updated: 2026/08/19 21:28:33 by suyoun           ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +24,12 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	int			size;
 	int			start;
 
-	if (argc == 1)
-		return ;
 	start = starting_index(argc, argv, info);
+<<<<<<< HEAD
 	if (argc - start == 0) // didn't work
+=======
+	if (argc - start == 0) //checks if theres any args left after flags
+>>>>>>> main
 		return ;
 	substr = get_substr(argc, argv, start);
 	size = count_size(substr);
@@ -38,14 +44,16 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 		free_split(substr);
 }
 
-int	count_size(char **substr)
+char	**get_substr(int argc, char **argv, int start)
 {
-	int	size;
+	char		**substr;
 
-	size = 0;
-	while (substr[size])
-		size++;
-	return (size);
+	substr = NULL;
+	if (argc - start == 1)
+		substr = ft_split (argv[start], ' ');
+	else
+		substr = &argv[start];
+	return (substr);
 }
 
 void	validate_convert_fill(int *arr, char **substr, int size)
