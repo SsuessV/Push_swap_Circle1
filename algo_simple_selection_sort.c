@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection_sort.c                                   :+:      :+:    :+:   */
+/*   algo_simple_selection_sort.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 21:38:14 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 22:29:09 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	find_the_smallest(t_numbers *numbers, int size)
 
 	i = 1;
 	smallest = numbers[0].rank;//assume the first element is the smallest
-{
 	min_index = 0;
 	while (i < size)
 	{
