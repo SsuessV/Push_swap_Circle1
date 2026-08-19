@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 13:19:08 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 20:59:10 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef	struct s_numbers
+typedef struct s_numbers
 {
 	int	value;
 	int	rank;
@@ -107,7 +107,7 @@ void		radix_sort(t_stack *stack_a, t_stack *stack_b);
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);
-void		move_chunks_to_b (t_stack *stack_a, t_stack *stack_b);
+void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b);
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c);
 void		butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end);
