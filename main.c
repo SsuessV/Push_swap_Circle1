@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 22:29:33 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 00:23:57 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,12 @@ int	main(int argc, char **argv)
 	parse_input(argc, argv, &a, &info);
 	stack_init(&b, NULL, 0, a.capacity);
 	info.disorder = calculate_disorder(&a);
+	if (info.strategy == 1)
+		selection_sort(&a, &b, &info);
+	else if (info.strategy == 2)
+		chunk_sort(&a, &b, &info);
+	else if (info.strategy == 3)
+		radix_sort(&a, &b, &info);
+	else
+		adaptive(&a, &b, &info); //dont we need the adaptive function???
 }
