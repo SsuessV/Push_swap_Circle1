@@ -24,6 +24,8 @@ SRCS =	assign_ranks.c \
 		cs_back_to_a.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
+		flags.c \
+		input_parsing_helpers.c \
 		
 
 OBJS = $(SRCS:.c=.o)

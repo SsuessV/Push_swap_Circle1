@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 23:44:56 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 13:32:09 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_stack(t_stack *stack)
 		ft_printf("\n");
 }
 
-int	main(int argc, char **argv)
+/* int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
@@ -43,88 +43,17 @@ int	main(int argc, char **argv)
 	ft_printf("\n");
 	ft_printf("\n");
 	
-//   ------------------- operations test -------------------- //
-	
-	/* ft_printf("BEFORE sa:\n");
-	print_stack(&a);
-	ft_printf("\n");
-	swap(&a);
-
-	ft_printf("AFTER sa:\n");
-	print_stack(&a);
-	ft_printf("\n");
-	
-	ft_printf("BEFORE ra:\n");
-	print_stack(&a);
-	ft_printf("\n");
-	rotate(&a);
-
-	ft_printf("AFTER ra:\n");
-	print_stack(&a);
-	ft_printf("\n");
-
-	ft_printf("BEFORE rra:\n");
-	print_stack(&a);
-	ft_printf("\n");
-	reverse_rotate(&a);
-
-	ft_printf("AFTER rra:\n");
-	print_stack(&a);
-	ft_printf("\n"); */
-	
-/* 	ft_printf("BEFORE pb:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-	push(&b, &a);
-	push(&b, &a);
-	push(&b, &a);
-	push(&b, &a);
-	ft_printf("AFTER pb:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-	
-	ft_printf("BEFORE pa:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-	push(&a, &b);
-
-	ft_printf("AFTER pa:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-	
-	double_swap(&a, &b);
-	ft_printf("AFTER ss:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-
-	double_rotate(&a, &b);
-	ft_printf("AFTER rr:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n");
-
-	double_reverse_rotate(&a, &b);
-	ft_printf("AFTER rrr:\n");
-	print_stack(&a);
-	print_stack(&b);
-	ft_printf("\n"); */
-
 //   ------------------- disorder test -------------------- //
-	ft_printf("disorder: %f%%", calculate_disorder(&a));
+	ft_printf("disorder: %f %%", calculate_disorder(&a));
 	ft_printf("\n");
 //   ------------------- algorithm test -------------------- //
 
-	/* ft_printf("selection: \n");
+	ft_printf("selection: \n");
 	selection_sort(&a, &b);
 	print_stack(&a);
-	print_stack(&b); */
+	print_stack(&b);
 	
-	/* ft_printf("chunk: \n");
+	ft_printf("chunk: \n");
 	chunk_sort(&a, &b);
 	ft_printf("Stack A:\n");
 	print_stack(&a);
@@ -133,9 +62,9 @@ int	main(int argc, char **argv)
 	print_stack(&b);
 	ft_printf("\n");
 	ft_printf("disorder: %f%%", calculate_disorder(&a));
-	ft_printf("\n"); */
+	ft_printf("\n"); 
 
-	/* ft_printf("radix: \n");
+	ft_printf("radix: \n");
 	radix_sort(&a, &b);
 	ft_printf("Stack A:\n");
 	print_stack(&a);
@@ -144,5 +73,18 @@ int	main(int argc, char **argv)
 	print_stack(&b);
 	ft_printf("\n");
 	ft_printf("disorder: %f%%", calculate_disorder(&a));
-	ft_printf("\n"); */
+	ft_printf("\n"); 
+} */
+
+
+int	main(int argc, char **argv)
+{
+	t_stack	a;
+	t_stack	b;
+	t_info	info;
+
+	parse_input(argc, argv, &a, &info);
+	stack_init(&b, NULL, 0, a.capacity);
+	info.disorder = calculate_disorder(&a);
+	
 }

@@ -6,26 +6,26 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/11 20:43:49 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 13:18:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-void	parse_input(int argc, char **argv, t_stack *stack)
+void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 {
 	char		**substr;
 	int			*arr;
 	int			size;
+	int			start;
 
-	substr = NULL;
 	if (argc == 1)
 		return ;
-	if (argc == 2)
-		substr = ft_split (argv[1], ' ');
-	else
-		substr = &argv[1];
+	start = starting_index(argc, argv, info);
+	if (argc - start == 0)
+		return ;
+	substr = get_substr(argc, argv, start);
 	size = count_size(substr);
 	arr = malloc(size * sizeof(int));
 	if (!arr)
@@ -34,7 +34,7 @@ void	parse_input(int argc, char **argv, t_stack *stack)
 	is_duplicate(arr, size);
 	stack_init(stack, arr, size, size);
 	free(arr);
-	if (argc == 2)
+	if (argc - start == 1)
 		free_split(substr);
 }
 

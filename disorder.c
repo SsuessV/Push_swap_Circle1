@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:51:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/15 19:34:39 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 00:25:25 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ double	calculate_disorder(t_stack *stack)
 	if (pairs == 0)
 		return (0);	
 	inversions = count_inversions(stack);
-	disorder = (double)inversions / pairs;
+	disorder = ((double)inversions / pairs) * 100;
 	return (disorder);
 }
 
