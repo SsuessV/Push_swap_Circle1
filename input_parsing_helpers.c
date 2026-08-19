@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing_helpers.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:14:39 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 13:20:24 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 21:05:09 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ char	**get_substr(int argc, char **argv, int start)
 		substr = ft_split (argv[start], ' ');
 	else
 		substr = &argv[start];
-	return (substr);	
+	return (substr);
 }
