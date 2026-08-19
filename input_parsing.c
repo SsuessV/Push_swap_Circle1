@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 21:28:33 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 21:56:46 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	int			start;
 
 	start = starting_index(argc, argv, info);
-	if (argc - start == 0) //checks if theres any args left after flags
+	if (argc - start == 0) //no args left after flags
 		return ;
-	substr = get_substr(argc, argv, start);
+	substr = get_substr(argc, argv, start); //process the input numbers into substrs
 	size = count_size(substr);
 	arr = malloc(size * sizeof(int));
 	if (!arr)
@@ -41,7 +41,7 @@ char	**get_substr(int argc, char **argv, int start)
 	char		**substr;
 
 	substr = NULL;
-	if (argc - start == 1)
+	if (argc - start == 1) //only 1 argument after the flags
 		substr = ft_split (argv[start], ' ');
 	else
 		substr = &argv[start];

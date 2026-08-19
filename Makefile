@@ -9,23 +9,22 @@ INCLUDES = -Iincludes -Ilibft -Ift_printf
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 
-SRCS =	assign_ranks.c \
+SRCS =	algo_complex_radix_sort.c \
+		algo_medium_chunk_sort.c \
+		algo_medium_cs_back_to_a.c \
+		algo_medium_cs_move_to_b.c \
+		algo_simple_selection_sort.c \
+		assign_ranks.c \
 		disorder.c \
+		input_flags.c \
 		input_parsing.c \
 		input_validation.c \
 		main.c \
-		ops_doubles.c \
-		ops_singles.c \
-		radix_sort.c \
-		selection_sort.c \
-		stack.c \
-		chunk_sort.c \
-		cs_move_to_b.c \
-		cs_back_to_a.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
-		flags.c \
-		
+		ops_doubles.c \
+		ops_singles.c \
+		stack.c \
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
