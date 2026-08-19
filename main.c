@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 21:42:41 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 00:32:04 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,9 @@ int	main(int argc, char **argv)
 	info_init(&info);
 	parse_input(argc, argv, &a, &info);
 	stack_init(&b, NULL, 0, a.capacity);
-	
+	info.disorder = calculate_disorder(&a);
 	print_stack(&a);
 	print_stack(&b);
-	ft_printf("disorder: %f %%", calculate_disorder(&a));
-	ft_printf("\n");
-	
 	choose_strategy(&a, &b, &info);
-	
-	ft_printf("total: %d\n", info.total_ops);
-	ft_printf("pa: %d\n", info.pa);
-	ft_printf("pb: %d\n", info.pb);
-	ft_printf("ra: %d\n", info.ra);
-	
+	print_benchmark(&info);
 }

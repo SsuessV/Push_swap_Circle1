@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 21:08:03 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 00:32:46 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 void	info_init(t_info *info)
 {
 	info->strategy = 0;
+	info->algorithm = 3;
 	info->bench = 0;
-	info->disorder= 0;
+	info->disorder = 0;
 	info->total_ops = 0;
 	info->sa = 0;
 	info->sb = 0;

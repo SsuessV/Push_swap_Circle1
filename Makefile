@@ -25,11 +25,9 @@ SRCS =	assign_ranks.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
 		flags.c \
-<<<<<<< HEAD
 		input_parsing_helpers.c \
 		strategy.c \
-=======
->>>>>>> main
+		benchmark.c \
 		
 
 OBJS = $(SRCS:.c=.o)

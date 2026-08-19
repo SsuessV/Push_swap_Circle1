@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/08/19 21:26:17 by bsurilla         ###   ########.fr       */
-=======
-/*   Updated: 2026/08/19 20:59:10 by suyoun           ###   ########.fr       */
->>>>>>> main
+/*   Updated: 2026/08/20 00:32:55 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +36,7 @@ typedef struct s_stack
 typedef struct s_info //change however u want, but please communicate it to me
 {
 	int		strategy;
+	int		algorithm;
 	int		bench;
 	double	disorder;
 	int		total_ops;
@@ -113,15 +110,18 @@ void		radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);
-<<<<<<< HEAD
 void		move_chunks_to_b (t_stack *stack_a, t_stack *stack_b, t_info *info);
-=======
-void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b);
->>>>>>> main
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c, t_info *info);
 void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);
 void		back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			largest_rank(t_stack *stack);
+
+/* Benchmark */
+void		print_benchmark(t_info *info);
+char		*strategy_to_text(t_info *info);
+void		print_ops1(t_info *info);
+void		print_ops2(t_info *info);
+void		decimal_zero(int decimal);
 
 #endif

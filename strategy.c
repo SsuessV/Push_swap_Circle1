@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:39:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 21:32:52 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 23:47:18 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@ void	run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info)
 	info->disorder = calculate_disorder(stack_a);
 	if (info->disorder < 0.2)
 	{
+		info->algorithm = 1;
 		selection_sort(stack_a, stack_b, info);
 	}
 	else if (info->disorder < 0.5)
 	{	
+		info->algorithm = 2;
 		chunk_sort(stack_a, stack_b, info);
 	}
 	else
 	{
+		info->algorithm = 3;
 		radix_sort(stack_a, stack_b, info);
 	}
 }
