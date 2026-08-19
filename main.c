@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 20:42:39 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 21:32:19 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	main(int argc, char **argv)
 	t_stack	b;
 	t_info	info;
 
+	if (argc == 1)
+		return ;
 	parse_input(argc, argv, &a, &info);
 	stack_init(&b, NULL, 0, a.capacity);
 	info.disorder = calculate_disorder(&a);
