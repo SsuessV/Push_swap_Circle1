@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cs_move_to_b.c                                     :+:      :+:    :+:   */
+/*   algo_medium_cs_move_to_b.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 20:45:11 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 23:36:11 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_chunks_to_b(t_stack *stack_a, t_stack *stack_b)
+void	move_chunks_to_b(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	int	size;
 	int	start;
@@ -34,8 +34,8 @@ void	move_chunks_to_b(t_stack *stack_a, t_stack *stack_b)
 		}
 		else
 		{
-			get_to_top(stack_a, current, 'a');
-			butterfly_push(stack_a, stack_b, start, end);	
+			get_to_top(stack_a, current, 'a', info);
+			butterfly_push(stack_a, stack_b, start, end, info);
 		}
 	}
 }
@@ -63,7 +63,7 @@ int	current_selection(t_stack *stack, int start, int end)
 	return (selected_index);
 }
 
-void	get_to_top(t_stack *stack, int selected_index, char c)
+void	get_to_top(t_stack *stack, int selected_index, char c, t_info *info)
 {
 	int		rotations;
 
@@ -75,8 +75,8 @@ void	get_to_top(t_stack *stack, int selected_index, char c)
 		while (rotations--)
 		{
 			if (c == 'a')
-				ra(stack);
-			rb(stack);
+				ra(stack, info);
+			rb(stack, info);
 		}
 	}
 	else
@@ -85,13 +85,13 @@ void	get_to_top(t_stack *stack, int selected_index, char c)
 		while (rotations--)
 		{
 			if (c == 'a')
-				rra(stack);
-			rrb(stack);
+				rra(stack, info);
+			rrb(stack, info);
 		}
 	}
 }
 
-void	butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end)
+void	butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info)
 {
 	int	middle;
 	int	atop;
@@ -101,10 +101,10 @@ void	butterfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end)
 	middle = (start + end) / 2;
 	atop = stack_a->numbers[0].rank;
 	if (atop >= middle)
-		pb(stack_b, stack_a);
+		pb(stack_b, stack_a, info);
 	else
 	{
-		pb(stack_b, stack_a);
-		rb(stack_b);
+		pb(stack_b, stack_a, info);
+		rb(stack_b, info);
 	}
 }

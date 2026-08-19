@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 21:56:46 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 23:47:46 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	if (argc - start == 0) //no args left after flags
 		return ;
 	substr = get_substr(argc, argv, start); //process the input numbers into substrs
+	if (!substr || !substr[0]) //./push_swap ""should print error
+		print_error();
 	size = count_size(substr);
 	arr = malloc(size * sizeof(int));
 	if (!arr)

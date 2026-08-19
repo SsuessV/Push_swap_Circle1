@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   algo_complex_radix_sort.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 20:49:27 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 23:29:06 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack *stack_a, t_stack *stack_b)
+void	radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	int	bit;
 	int	max_bit;
@@ -28,13 +28,13 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 		while (rank < size)
 		{
 			if ((stack_a->numbers[0].rank >> bit & 1) == 0)
-				pb(stack_b, stack_a);
+				pb(stack_b, stack_a, info);
 			else
-				ra(stack_a);
+				ra(stack_a, info);
 			rank++;
 		}
 		while (stack_b->size > 0)
-			pa(stack_a, stack_b);
+			pa(stack_a, stack_b, info);
 		bit++;
 	}
 }

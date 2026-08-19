@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 21:23:04 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/19 23:10:26 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	is_valid_number(char *input)
 {
 	if (*input == '+' || *input == '-')
-		input++;
+		input++; //after a sign
 	if (*input == '\0')
 		return (0);
 	while (*input)
 	{
-		if (!('0' <= *input && *input <= '9'))
+		if (!('0' <= *input && *input <= '9')) //every character must be a digit
 			return (0);
 		input++;
 	}
