@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 13:19:08 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 19:18:58 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void		rotate(t_stack *stack);
 void		reverse_rotate(t_stack *stack);
 
 /* Operations commands */
+void		info_init(t_info *info);
 void		sa(t_stack *stack_a);
 void		sb(t_stack *stack_b);
 void		ss(t_stack *stack_a, t_stack *stack_b);
@@ -92,9 +93,12 @@ void		rb(t_stack *stack_b);
 void		rrr(t_stack *stack_a, t_stack *stack_b);
 void		rra(t_stack *stack_a);
 void		rrb(t_stack *stack_b);
-/* disorder */
+
+/* disorder and strategies*/
 double		calculate_disorder(t_stack *stack);
 int			count_inversions(t_stack *stack);
+void		choose_strategy(t_stack *stack_a, t_stack *stack_b, t_info *info);
+void		run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info);
 
 /* Sorting */
 void		selection_sort(t_stack *stack_a, t_stack *stack_b);
@@ -102,8 +106,6 @@ void		smallest_to_top(t_stack *stack_a);
 int			find_the_smallest(t_numbers *numbers, int size);
 int			count_bits(int max_rank);
 void		radix_sort(t_stack *stack_a, t_stack *stack_b);
-
-/* chunk sort */
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);

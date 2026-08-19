@@ -6,12 +6,18 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 23:22:27 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 19:13:56 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
+
+void	ra(t_stack *stack_a)
+{
+	rotate(stack_a);
+	ft_printf("pa\n");
+}
 
 void	rb(t_stack *stack_b)
 {
