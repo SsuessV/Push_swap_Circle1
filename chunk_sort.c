@@ -6,18 +6,18 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 18:30:20 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 17:34:53 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 21:27:16 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chunk_sort(t_stack *stack_a, t_stack *stack_b)
+void	chunk_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	if (!stack_a || !stack_b)
 		return ;
-	move_chunks_to_b (stack_a, stack_b);
-	back_to_a(stack_a, stack_b);
+	move_chunks_to_b (stack_a, stack_b, info);
+	back_to_a(stack_a, stack_b, info);
 }
 
 int	chunk_range(t_stack *stack)

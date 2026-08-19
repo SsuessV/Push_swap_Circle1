@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 13:18:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 20:01:30 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	if (argc == 1)
 		return ;
 	start = starting_index(argc, argv, info);
-	if (argc - start == 0)
+	if (argc - start == 0) // didn't work
 		return ;
 	substr = get_substr(argc, argv, start);
 	size = count_size(substr);

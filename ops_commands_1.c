@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 19:17:38 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 21:08:03 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,34 @@ void	info_init(t_info *info)
 	info->rrr = 0;
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	push(stack_a, stack_b);
 	ft_printf("pa\n");
+	info->pa++;
+	info->total_ops++;
 }
 
-void	pb(t_stack *stack_b, t_stack *stack_a)
+void	pb(t_stack *stack_b, t_stack *stack_a, t_info *info)
 {
 	push(stack_b, stack_a);
 	ft_printf("pb\n");
+	info->pb++;
+	info->total_ops++;
 }
 
-void	sa(t_stack *stack_a)
+void	sa(t_stack *stack_a, t_info *info)
 {
 	swap(stack_a);
 	ft_printf("sa\n");
+	info->sa++;
+	info->total_ops++;
 }
 
-void	sb(t_stack *stack_b)
+void	sb(t_stack *stack_b, t_info *info)
 {
 	swap(stack_b);
 	ft_printf("sb\n");
+	info->sb++;
+	info->total_ops++;
 }
