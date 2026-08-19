@@ -25,7 +25,6 @@ SRCS =	assign_ranks.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
 		flags.c \
-		input_parsing_helpers.c \
 		strategy.c \
 		benchmark.c \
 		

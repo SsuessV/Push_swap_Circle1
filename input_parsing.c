@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/08/19 20:01:30 by bsurilla         ###   ########.fr       */
-=======
-/*   Updated: 2026/08/19 21:28:33 by suyoun           ###   ########.fr       */
->>>>>>> main
+/*   Updated: 2026/08/20 01:04:45 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +21,7 @@ void	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	int			start;
 
 	start = starting_index(argc, argv, info);
-<<<<<<< HEAD
-	if (argc - start == 0) // didn't work
-=======
-	if (argc - start == 0) //checks if theres any args left after flags
->>>>>>> main
+	if (argc - start == 0) 
 		return ;
 	substr = get_substr(argc, argv, start);
 	size = count_size(substr);

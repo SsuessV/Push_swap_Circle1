@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:54:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 00:28:19 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 01:21:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	print_benchmark(t_info *info)
 	disorder = (int)(info->disorder * 10000);
 	whole = disorder / 100;
 	decimal = disorder % 100;
+	ft_putchar_fd('\n', 2);
 	ft_putstr_fd("disorder: ", 2);
 	ft_putnbr_fd(whole, 2);
 	ft_putchar_fd('.', 2);
@@ -66,11 +67,9 @@ void	print_ops1(t_info *info)
 	ft_putstr_fd(" ss: ", 2);
 	ft_putnbr_fd(info->ss, 2);
 	ft_putchar_fd('	', 2);
-	ft_putchar_fd(' ', 2);
 	ft_putstr_fd(" pa: ", 2);
 	ft_putnbr_fd(info->pa, 2);
 	ft_putchar_fd('	', 2);
-	ft_putchar_fd(' ', 2);
 	ft_putstr_fd(" pb: ", 2);
 	ft_putnbr_fd(info->pb, 2);
 	ft_putchar_fd('\n', 2);
