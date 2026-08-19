@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 01:21:06 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/12 20:02:45 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 20:51:31 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
+
 int	ft_putfloat(double n)
 {
 	int		i;
 	int		whole;
 	double	fraction;
 	int		decimal;
-	
+
 	i = 0;
 	whole = (int)n;
 	fraction = n - whole;
@@ -61,7 +62,7 @@ int	ft_format(char formatter, va_list format)
 	else if (formatter == 'p')
 		i = i + ft_putptr(va_arg(format, void *));
 	else if (formatter == 'd' || formatter == 'i')
-		i = i + ft_putnbr(va_arg(format, int));	
+		i = i + ft_putnbr(va_arg(format, int));
 	else if (formatter == 'u')
 		i = i + ft_putnbr_u(va_arg(format, unsigned int));
 	else if (formatter == 'x')
