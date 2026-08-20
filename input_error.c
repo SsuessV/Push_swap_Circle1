@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 12:09:28 by bsurilla         ###   ########.fr       */
+/*   Created: 2026/08/20 12:55:54 by bsurilla          #+#    #+#             */
+/*   Updated: 2026/08/20 13:39:13 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
 
-int	main(int argc, char **argv)
+void	print_error(void)
 {
-	t_stack	a;
-	t_stack	b;
-	t_info	info;
-	
-	info_init(&info);
-	if (!parse_input(argc, argv, &a, &info))
-		return (0);
-	stack_init(&b, NULL, 0, a.capacity);
-	info.disorder = calculate_disorder(&a);
-	choose_strategy(&a, &b, &info);
-	print_benchmark(&info);
-	stack_free(&a);
-	stack_free(&b);
+	write(2, "Error\n", 6);
+	exit(42);
+}
+
+void	input_cleanup(int *arr, char **substr, int argc, int start)
+{
+	free(arr);
+	if (argc - start == 1)
+		free_split(substr);
+	print_error();
 }

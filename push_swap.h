@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 02:02:09 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 13:43:01 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,20 @@ typedef struct s_info
 }	t_info;
 
 /* Parsing */
-void		parse_input(int argc, char **argv, t_stack *stack, t_info *info);
+int			parse_input(int argc, char **argv, t_stack *stack, t_info *info);
 int			count_size(char **numbers);
-void		validate_convert_fill(int *arr, char **numbers, int size);
+int			validate_convert_fill(int *arr, char **numbers, int size);
 long long	ft_atoll(const char *nptr);
 void		free_split(char **words);
 int			is_valid_number(char *input);
 int			is_inrange(long long n);
-void		is_duplicate(int *arr, int size);
+int			is_duplicate(int *arr, int size);
 void		print_error(void);
 int			starting_index(int argc, char **argv, t_info *info);
 int			output_mode(char *argv, t_info *info);
 int			valid_strategy(char *argv, t_info *info);
 char		**get_substr(int argc, char **argv, int start);
+void		input_cleanup(int *arr, char **substr, int argc, int start);
 
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
@@ -111,6 +112,7 @@ int			ft_sqrt(int size);
 void		move_chunks_to_b (t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c, t_info *info);
+void		reverse_to_top (t_stack *stack, int index, char c, t_info *info);
 void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);
 void		back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			largest_rank(t_stack *stack);

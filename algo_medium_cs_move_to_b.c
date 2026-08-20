@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 02:22:31 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:19:06 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,26 @@ void	get_to_top(t_stack *stack, int selected_index, char c, t_info *info)
 		{
 			if (c == 'a')
 				ra(stack, info);
-			rb(stack, info);
+			else
+				rb(stack, info);
 		}
 	}
 	else
+		reverse_to_top(stack, selected_index, c, info);
+	
+}
+
+void	reverse_to_top (t_stack *stack, int index, char c, t_info *info)
+{
+	int	rotations;
+	
+	rotations = stack->size - index;
+	while (rotations--)
 	{
-		rotations = stack->size - selected_index;
-		while (rotations--)
-		{
-			if (c == 'a')
-				rra(stack, info);
+		if (c == 'a')
+			rra(stack, info);
+		else
 			rrb(stack, info);
-		}
 	}
 }
 

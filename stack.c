@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/18 18:02:16 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 12:53:44 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ void	stack_free(t_stack *stack)
 	free(stack->numbers);
 	stack->numbers = NULL;
 }
+

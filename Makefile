@@ -27,6 +27,7 @@ SRCS =	algo_complex_radix_sort.c \
 		ops_doubles.c \
 		ops_singles.c \
 		stack.c \
+		input_error.c \
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)

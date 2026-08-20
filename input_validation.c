@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 23:10:26 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 12:57:44 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	is_inrange(long long n)
 	return (1);
 }
 
-void	is_duplicate(int *arr, int size)
+int	is_duplicate(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -46,17 +46,12 @@ void	is_duplicate(int *arr, int size)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
-				print_error();
+				return (1);
 			j++;
 		}
 		i++;
 	}
-}
-
-void	print_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(42);
+	return (0);
 }
 
 int	count_size(char **substr)

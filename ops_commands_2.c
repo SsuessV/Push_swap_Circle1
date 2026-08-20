@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 02:14:11 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:45:36 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ra(t_stack *stack_a, t_info *info)
 	if (!stack_a)
 		return ;
 	rotate(stack_a);
-	ft_printf("pa\n");
+	ft_printf("ra\n");
 	info->ra++;
 	info->total_ops++;
 }
