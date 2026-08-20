@@ -14,20 +14,22 @@ SRCS =	algo_complex_radix_sort.c \
 		algo_medium_cs_back_to_a.c \
 		algo_medium_cs_move_to_b.c \
 		algo_simple_selection_sort.c \
+		algo_small_sort.c \
 		assign_ranks.c \
+		benchmark.c \
 		disorder.c \
+		input_error.c \
 		input_flags.c \
 		input_parsing.c \
 		input_validation.c \
 		main.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
-		strategy.c \
-		benchmark.c \
 		ops_doubles.c \
 		ops_singles.c \
 		stack.c \
-		input_error.c \
+		strategy_selection.c \
+
 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(OBJS:.o=.d)
