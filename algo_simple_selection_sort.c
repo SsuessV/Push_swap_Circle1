@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple_selection_sort.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/19 23:44:14 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 18:21:45 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	selection_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
+	if (stack_a->size <= 5)
+	{
+		small_sort(stack_a, stack_b, info);
+		return ;
+	}
 	while (stack_a->size > 0)
 	{
 		smallest_to_top(stack_a, info);
@@ -64,4 +69,14 @@ int	find_the_smallest(t_numbers *numbers, int size)
 		i++;
 	}
 	return (min_index);
+}
+
+void small_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
+{
+	if (stack_a->size == 2)
+		sort_two(stack_a, info);
+	else if (stack_a->size == 3)
+		sort_three(stack_a, info);
+	else if (stack_a->size <= 5)
+		sort_four_five(stack_a, stack_b, info);
 }

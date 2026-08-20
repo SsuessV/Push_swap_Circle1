@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:39:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 16:11:17 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 18:21:31 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	choose_strategy(t_stack *stack_a, t_stack *stack_b, t_info *info)
 
 void	run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
-	info->disorder = calculate_disorder(stack_a);
+	if (info->disorder == 0)
+		return ;
 	if (info->disorder < 0.2)
 	{
 		info->algorithm = 1;

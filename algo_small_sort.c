@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_error.c                                      :+:      :+:    :+:   */
+/*   algo_small_sort.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/20 12:55:54 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 19:54:15 by suyoun           ###   ########.fr       */
+/*   Created: 2026/08/20 17:35:35 by suyoun            #+#    #+#             */
+/*   Updated: 2026/08/20 19:05:21 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(void)
+void	sort_two(t_stack *stack_a, t_info *info)
 {
-	write(2, "Error\n", 6);
-	exit(42);
+	if (stack_a->size == 2)
+		sa(stack_a, info);
 }
 
-void	input_cleanup(int *arr, char **substr, int argc, int start)
+void	sort_three(t_stack *stack_a, t_info *info)
 {
-	free(arr);
-	if (argc - start == 1)
-		free_split(substr);
-	print_error();
+	if (info->disorder == 0)
+		return ;
+	
 }

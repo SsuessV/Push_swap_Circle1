@@ -25,10 +25,11 @@ This project was developed by:
   - Handled argument validation and error checking
   - Integrated parsing with stack initialization
   - Developed stack manipulation operations (sa, sb, ss & pa, pb)
-  - Implemented sorting algorithms (selection sort & radix sort)
+  - Implemented sorting algorithms (selection sort & radix sort) and handles small inputs upto 5 numbers
   -	Ensuring the code is up to Norm
-  - Ensuring readability and transparency for simple and coherent desing
+  - Ensuring readability and transparency for simple and coherent design
   - Implemented struct for Benchmark mode
+  - Tested with edge cases
 
 
 - Bea-Marie, Surilla (bsurilla)

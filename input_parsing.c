@@ -6,12 +6,13 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 16:12:43 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 16:47:34 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+#include <stdio.h>
 
 int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 {
