@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ops_commands_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 02:00:58 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:42:06 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
 
-void	info_init(t_info *info)
+void	info_init(t_info *info) //initializes a struct variable
 {
 	info->strategy = 0;
 	info->algorithm = 3;
