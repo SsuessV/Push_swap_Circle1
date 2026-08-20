@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 17:35:35 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 19:05:21 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 21:10:22 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	sort_three(t_stack *stack_a, t_info *info)
 {
 	if (info->disorder == 0)
 		return ;
+	
 	
 }

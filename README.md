@@ -108,7 +108,33 @@ All source code, algorithm choices, design decisions, and final implementations 
 
 ### Algorithm and Data Structure Choices
 
-We chose arrays because the input already comes as a fixed number of arguments through argc and argv. Arrays are straightforward to allocate, easy to index, and we were already comfortable working with them from previous projects. We were aware that operations such as removing the first element may require shifting values, but we felt the simpler implementation outweighed that cost for our first approach.
+## Algorithms
+
+Small Sort — O(1) for a maximum of 5 elements:
+Handles small inputs of up to 5 elements using dedicated sorting functions for 2, 3, and 5 elements.  
+We use this because small inputs can be sorted with fewer operations than running the general sorting algorithms.
+
+**Simple — Selection Sort O(n²):**
+Finds the smallest element, moves it to the top of stack A, and pushes it to stack B.  
+Once all elements are processed, they are pushed back to A in sorted order. We chose it because it is simple and fits the required O(n²) complexity.  
+
+**Medium — Chunk Sort O(n√n):**
+Divides the input into √n-sized chunks and processes the elements chunk by chunk using the two stacks.  
+This reduces the number of operations compared to the simple algorithm while meeting the required O(n√n) complexity.
+
+**Complex — Radix Sort O(n log n):**
+Uses the binary representation of the ranked values to sort the stack bit by bit. It repeatedly pushes elements between the stacks based on each bit.  
+We chose it because it provides efficient sorting for large inputs and fits the required O(n log n) complexity.
+
+**Adaptive:**
+Calculates the disorder of the input before sorting and selects an algorithm based on it.  
+Low disorder uses Selection Sort, medium disorder uses Chunk Sort, and high disorder uses Radix Sort.
+This allows the program to adapt the sorting strategy to the initial state of the data.
+
+## Data structure
+We chose a dynamically allocated array to store the stack elements. The t_stack structure keeps track of the array, its current size, and its capacity.
+Arrays provide simple indexing and allow us to access elements efficiently by position.  
+We chose this approach because we were already comfortable working with arrays from previous projects and it made the implementation easier to manage.
 
 ---
 
