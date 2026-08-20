@@ -26,13 +26,20 @@ This project was developed by:
   - Integrated parsing with stack initialization
   - Developed stack manipulation operations (sa, sb, ss & pa, pb)
   - Implemented sorting algorithms (selection sort & radix sort)
+  -	Ensuring the code is up to Norm
+  - Ensuring readability and transparency for simple and coherent desing
+  - Implemented struct for Benchmark mode
+
 
 - Bea-Marie, Surilla (bsurilla)
   - Designed and implemented stack structures
   - Implemented stack creation and memory management
-  - Developed stack manipulation operations
-  -
-  -
+  - Developed stack manipulation operations (ra, rb, rr, rra, rrb, rrr)
+  - Implemented the medium strategy (chunk sort)
+  - Handled the ranking of the input and the disorder calculation
+  - Implemented the sorting strategies including the handeling of the flags
+  - Implemented Benchmark mode
+  - Ensuring uniformity and consistancy in code through constant testing and debugging with the help of AI. 
 
 ---
 
