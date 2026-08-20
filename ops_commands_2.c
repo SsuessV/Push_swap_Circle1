@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 21:08:52 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 02:14:11 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ra(t_stack *stack_a, t_info *info)
 {
+	if (!stack_a)
+		return ;
 	rotate(stack_a);
 	ft_printf("pa\n");
 	info->ra++;
@@ -23,6 +25,8 @@ void	ra(t_stack *stack_a, t_info *info)
 
 void	rb(t_stack *stack_b, t_info *info)
 {
+	if (!stack_b)
+		return ;
 	rotate(stack_b);
 	ft_printf("rb\n");
 	info->rb++;
@@ -31,18 +35,20 @@ void	rb(t_stack *stack_b, t_info *info)
 
 void	rra(t_stack *stack_a, t_info *info)
 {
+	if (!stack_a)
+		return ;
 	reverse_rotate(stack_a);
 	ft_printf("rra\n");
 	info->rra++;
 	info->total_ops++;
-	
 }
 
 void	rrb(t_stack *stack_b, t_info *info)
 {
+	if (!stack_b)
+		return ;
 	reverse_rotate(stack_b);
 	ft_printf("rrb\n");
 	info->rrb++;
 	info->total_ops++;
 }
-

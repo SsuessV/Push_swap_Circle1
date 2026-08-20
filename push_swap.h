@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 00:32:55 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 02:02:09 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack
 	int			capacity;
 }	t_stack;
 
-typedef struct s_info //change however u want, but please communicate it to me
+typedef struct s_info
 {
 	int		strategy;
 	int		algorithm;
@@ -89,8 +89,6 @@ void		pb(t_stack *stack_b, t_stack *stack_a, t_info *info);
 void		ra(t_stack *stack_a, t_info *info);
 void		rb(t_stack *stack_b, t_info *info);
 void		rr(t_stack *stack_a, t_stack *stack_b, t_info *info);
-void		ra(t_stack *stack_a, t_info *info);
-void		rb(t_stack *stack_b, t_info *info);
 void		rrr(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		rra(t_stack *stack_a, t_info *info);
 void		rrb(t_stack *stack_b, t_info *info);

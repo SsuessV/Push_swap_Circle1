@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   algo_complex_radix_sort.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:42:53 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 01:07:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/19 23:29:06 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		while (rank < size)
 		{
 			if ((stack_a->numbers[0].rank >> bit & 1) == 0)
-				pb(stack_b, stack_a, info); //if the last bit is 0 push to b
+				pb(stack_b, stack_a, info);
 			else
-				ra(stack_a, info); //if its 1 ra (bc we pushed it to b)
+				ra(stack_a, info);
 			rank++;
 		}
 		while (stack_b->size > 0)
-			pa(stack_a, stack_b, info);//push all back to a
+			pa(stack_a, stack_b, info);
 		bit++;
 	}
 }
