@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 11:28:16 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 23:08:43 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 16:20:20 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,16 @@ int	output_mode(char *argv, t_info *info)
 int	starting_index(int argc, char **argv, t_info *info)
 {
 	int	i;
-	int strategy;
+	int	strategy;
 	int	mode;
 
 	i = 1;
-
 	while (i < argc)
-	{	
+	{
 		strategy = valid_strategy(argv[i], info);
 		mode = output_mode(argv[i], info);
 		if (strategy == 0 && mode == 0)
-			break;
+			break ;
 		i++;
 	}
 	return (i);

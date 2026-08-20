@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium_cs_back_to_a.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 16:58:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 23:40:28 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 16:14:55 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
-	int current;
-	
+	int	current;
+
 	if (!stack_a || !stack_b)
-		return ;	
+		return ;
 	while (stack_b->size > 0)
 	{
 		current = largest_rank (stack_b);
@@ -30,7 +30,7 @@ int	largest_rank(t_stack *stack)
 {
 	int	i;
 	int	largest;
-	
+
 	if (!stack || stack->size == 0)
 		return (-1);
 	i = 0;

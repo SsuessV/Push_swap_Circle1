@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strategy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:39:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 23:47:18 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 16:11:17 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	choose_strategy(t_stack *stack_a, t_stack *stack_b, t_info *info)
 	else
 		run_adaptive(stack_a, stack_b, info);
 }
+
 void	run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	info->disorder = calculate_disorder(stack_a);
@@ -33,7 +34,7 @@ void	run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		selection_sort(stack_a, stack_b, info);
 	}
 	else if (info->disorder < 0.5)
-	{	
+	{
 		info->algorithm = 2;
 		chunk_sort(stack_a, stack_b, info);
 	}

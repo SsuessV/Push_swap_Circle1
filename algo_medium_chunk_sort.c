@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium_chunk_sort.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 18:30:20 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/19 23:31:18 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/20 16:19:04 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	chunk_range(t_stack *stack)
 {
 	int	chunk_amount;
 	int	chunk_size;
-	
-	if(!stack || stack->size == 0)
-		return(0);
+
+	if (!stack || stack->size == 0)
+		return (0);
 	chunk_amount = ft_sqrt(stack->size);
 	chunk_size = stack->size / chunk_amount;
 	return (chunk_size);

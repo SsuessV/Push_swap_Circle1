@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 13:43:01 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 16:07:35 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,10 @@ void		radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);
-void		move_chunks_to_b (t_stack *stack_a, t_stack *stack_b, t_info *info);
+void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			current_selection(t_stack *stack, int start, int end);
 void		get_to_top(t_stack *stack, int selected_index, char c, t_info *info);
-void		reverse_to_top (t_stack *stack, int index, char c, t_info *info);
+void		reverse_to_top(t_stack *stack, int index, char c, t_info *info);
 void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);
 void		back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			largest_rank(t_stack *stack);

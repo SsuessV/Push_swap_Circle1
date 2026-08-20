@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:54:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 01:21:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 16:19:32 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	print_benchmark(t_info *info)
 {
 	int	disorder;
 	int	whole;
-	int decimal;
-	
+	int	decimal;
+
 	if (info->bench == 0)
 		return ;
 	disorder = (int)(info->disorder * 10000);
@@ -98,7 +98,7 @@ void	print_ops2(t_info *info)
 }
 
 void	decimal_zero(int decimal)
-{	
+{
 	if (decimal < 10)
 		ft_putnbr_fd(0, 2);
 	ft_putnbr_fd(decimal, 2);

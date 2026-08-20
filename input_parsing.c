@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 13:41:55 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 16:12:43 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	if (argc == 1)
 		return (0);
 	start = starting_index(argc, argv, info);
-	if (argc - start == 0) 
+	if (argc - start == 0)
 		return (0);
 	substr = get_substr(argc, argv, start); //process the input numbers into substrs
 	if (!substr || !substr[0]) //./push_swap ""should print error
@@ -32,9 +32,8 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	arr = malloc(size * sizeof(int));
 	if (!arr)
 		print_error();
-	if (validate_convert_fill(arr, substr, size)
-	|| is_duplicate(arr, size))
-	input_cleanup(arr, substr, argc, start);
+	if (validate_convert_fill(arr, substr, size) || is_duplicate(arr, size))
+		input_cleanup(arr, substr, argc, start);
 	stack_init(stack, arr, size, size);
 	free(arr);
 	if (argc - start == 1)

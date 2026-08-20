@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium_cs_move_to_b.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 11:19:06 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/20 16:18:07 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	move_chunks_to_b(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		return ;
 	size = chunk_range (stack_a);
 	start = 0;
-	end = start + size; 
+	end = start + size;
 	while (stack_a->size > 0)
 	{
 		current = current_selection(stack_a, start, end);
@@ -82,13 +82,12 @@ void	get_to_top(t_stack *stack, int selected_index, char c, t_info *info)
 	}
 	else
 		reverse_to_top(stack, selected_index, c, info);
-	
 }
 
-void	reverse_to_top (t_stack *stack, int index, char c, t_info *info)
+void	reverse_to_top(t_stack *stack, int index, char c, t_info *info)
 {
 	int	rotations;
-	
+
 	rotations = stack->size - index;
 	while (rotations--)
 	{
