@@ -25,7 +25,7 @@ This project was developed by:
   - Developed stack manipulation operations (swap, push)
   - Implemented the Small Sort for small inputs, Simple strategy using selection sort, and Complex strategy using radix sort.
   - Implemented the data structures and operation counters used for Benchmark mode.
-  -	Ensured code compliance with the 42 Norm and maintained readable and consistent code.
+  -	Ensured code compliance with the 42 Norm and regularly checked the code using Norminette.
   - Ensuring readability and transparency for simple and coherent design
   - Tested the implemented components with various edge cases.
 
