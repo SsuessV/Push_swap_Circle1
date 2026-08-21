@@ -21,26 +21,25 @@ The project focuses on algorithm design, data structures, optimization, and effi
 This project was developed by:
 
 - Su Jung, Youn (suyoun)
-  - Implemented input parsing (flags handling, )
-  - Handled argument validation and error checking
-  - Integrated parsing with stack initialization
-  - Developed stack manipulation operations (sa, sb, ss & pa, pb)
-  - Implemented sorting algorithms (selection sort & radix sort & small sort)
-  -	Ensuring the code is up to Norm
+  - Implemented input parsing, including argument validation and error handling.
+  - Developed stack manipulation operations (swap, push)
+  - Implemented the Small Sort for small inputs, Simple strategy using selection sort, and Complex strategy using radix sort.
+  - Implemented the data structures and operation counters used for Benchmark mode.
+  -	Ensured code compliance with the 42 Norm and maintained readable and consistent code.
   - Ensuring readability and transparency for simple and coherent design
-  - Implemented struct for Benchmark mode
-  - Tested with edge cases
+  - Tested the implemented components with various edge cases.
 
 
 - Bea-Marie, Surilla (bsurilla)
-  - Designed and implemented stack structures
-  - Implemented stack creation and memory management
-  - Developed stack manipulation operations (ra, rb, rr, rra, rrb, rrr)
-  - Implemented the medium strategy (chunk sort)
-  - Handled the ranking of the input and the disorder calculation
-  - Implemented the sorting strategies including the handeling of the flags
-  - Implemented Benchmark mode
-  - Ensuring uniformity and consistancy in code through constant testing and debugging with the help of AI. 
+  - Designed and implemented the stack structure, including stack creation and memory management.
+  - Developed stack manipulation operations (rotate, reverse-rotate)
+  - Implemented the Medium strategy using Chunk Sort.
+  - Implemented input ranking and the disorder calculation.
+  - Implemented the strategy-selection system, including the choose_strategy() function.
+  - Implemented the command-line strategy flags (--simple, --medium, --complex, and --adaptive) and  
+    their integration with the corresponding sorting strategies.
+  - Implemented and integrated Benchmark mode.
+  - Performed continuous testing and debugging to ensure consistency and correctness.
 
 ---
 
@@ -111,25 +110,30 @@ All source code, algorithm choices, design decisions, and final implementations 
 ## Algorithms
 
 Small Sort — O(1) for a maximum of 5 elements:
-Handles small inputs of up to 5 elements using dedicated sorting functions for 2, 3, and 5 elements.  
-We use this because small inputs can be sorted with fewer operations than running the general sorting algorithms.
+Handles very small inputs of up to 5 elements using dedicated sorting functions for 2, 3, and 5 elements.
+We use specialized methods for these cases because they can sort small inputs with fewer Push_swap operations than the general-purpose algorithms.
 
 **Simple — Selection Sort O(n²):**
 Finds the smallest element, moves it to the top of stack A, and pushes it to stack B.  
-Once all elements are processed, they are pushed back to A in sorted order. We chose it because it is simple and fits the required O(n²) complexity.  
+Once all elements have been processed, they are pushed back to A in sorted order.
+We chose Selection Sort because it is simple to implement and fits the required O(n²) complexity class.
 
 **Medium — Chunk Sort O(n√n):**
-Divides the input into √n-sized chunks and processes the elements chunk by chunk using the two stacks.  
-This reduces the number of operations compared to the simple algorithm while meeting the required O(n√n) complexity.
+Divides the input into approximately √n-sized chunks and processes the elements chunk by chunk using the two stacks.
+We chose this approach because it reduces the number of operations compared with the Simple strategy while meeting the required O(n√n) complexity class.
 
 **Complex — Radix Sort O(n log n):**
-Uses the binary representation of the ranked values to sort the stack bit by bit. It repeatedly pushes elements between the stacks based on each bit.  
-We chose it because it provides efficient sorting for large inputs and fits the required O(n log n) complexity.
+Uses the ranked values and their binary representation to sort the stack bit by bit. Elements are repeatedly moved between the two stacks according to the current bit. We chose Radix Sort because it provides efficient sorting for large inputs and fits the required O(n log n) complexity class.
 
-**Adaptive:**
-Calculates the disorder of the input before sorting and selects an algorithm based on it.  
-Low disorder uses Selection Sort, medium disorder uses Chunk Sort, and high disorder uses Radix Sort.
-This allows the program to adapt the sorting strategy to the initial state of the data.
+Adaptive:
+The program always calculates the disorder of the initial input before performing any sorting operations, as required by the subject.
+When the Adaptive strategy is selected (either explicitly with --adaptive or by default when no strategy flag is provided), the measured disorder determines which sorting method is used:
+
+Low disorder (< 0.2): Selection Sort — O(n²)  
+Medium disorder (0.2 ≤ disorder < 0.5): Chunk Sort — O(n√n)  
+High disorder (≥ 0.5): Radix Sort — O(n log n)
+
+When --simple, --medium, or --complex is explicitly selected, the disorder is still calculated as required, but it does not determine the selected strategy. The specified algorithm is used directly. This allows the Adaptive strategy to choose an appropriate sorting method based on the initial state of the data while ensuring that all four required strategies can also be selected explicitly.
 
 ## Data structure
 We chose a dynamically allocated array to store the stack elements. The t_stack structure keeps track of the array, its current size, and its capacity.
