@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 09:01:47 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 19:59:15 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ int			current_selection(t_stack *stack,
 void		get_to_top(t_stack *stack, int selected_index,
 				char c, t_info *info);
 void		reverse_to_top(t_stack *stack, int index, char c, t_info *info);
-void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);
+void		bfly_push(t_stack *a, t_stack *b, int start, t_info *info);
 void		back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			largest_rank(t_stack *stack);
 

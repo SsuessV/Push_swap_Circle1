@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium_cs_move_to_b.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 09:21:26 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 20:04:36 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	move_chunks_to_b(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		else
 		{
 			get_to_top(stack_a, current, 'a', info);
-			bfly_push(stack_a, stack_b, start, end, info);
+			bfly_push(stack_a, stack_b, start, info);
 		}
 	}
 }
@@ -98,13 +98,17 @@ void	reverse_to_top(t_stack *stack, int index, char c, t_info *info)
 	}
 }
 
-void	bfly_push(t_stack *a, t_stack *b, int start, int end, t_info *info)
+void	bfly_push(t_stack *a, t_stack *b, int start, t_info *info)
 {
 	int	middle;
 	int	atop;
+	int	size;
+	int	end;
 
-	if (!a || !b || a->size == 0) //why are u passing a/b instead of stack_a/b only in this function?
+	if (!a || !b || a->size == 0)
 		return ;
+	size = chunk_range (a);
+	end = start + size;
 	middle = (start + end) / 2;
 	atop = a->numbers[0].rank;
 	if (atop >= middle)
