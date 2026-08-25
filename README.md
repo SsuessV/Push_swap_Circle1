@@ -33,10 +33,10 @@ This project was developed by:
 - Bea-Marie, Surilla (bsurilla)
   - Implemented stack initialization, dynamic memory allocation, and memory cleanup.
   - Developed stack operations (rotate, reverse-rotate).
-  - Developed the Medium strategy (Chunk Sort).
+  - Implemented the Medium strategy (Chunk Sort).
   - Implemented ranking, disorder calculation, and strategy selection.
   - Implemented and integrated Benchmark mode.
-  - Performed testing and debugging.
+  - Performed constant testing and debugging throughout the project.
 
 ---
 
@@ -103,7 +103,7 @@ The Makefile will automatically compile the required source files and link the L
 
 ### AI Usage
 
-AI tools (such as ChatGPT and Claude) were used as learning and review aids during the development of this project.
+AI tool (such as ChatGPT) was used as learning and review aids during the development of this project.
 
 They were used to:
 - Explain Push_swap requirements and the allowed operations.
@@ -121,39 +121,37 @@ All source code, algorithm choices, design decisions, and final implementations 
 
 ## Algorithms
 
-**Small Sort — O(1) for a maximum of 5 elements:**  
+**Small Sort** — O(1) for a maximum of 5 elements:  
 Handles very small inputs of up to 5 elements using dedicated sorting functions for 2, 3, 4, and 5 elements.  
 We use specialized methods for these cases because they can sort small inputs with fewer Push_swap operations than the general-purpose algorithms.  
 
-**Simple — Selection Sort O(n²):**  
+**Simple** — `Selection Sort` O(n²):  
 Finds the smallest element, moves it to the top of stack A, and pushes it to stack B.  
 Once all elements have been processed, they are pushed back to A in sorted order.  
 We chose Selection Sort because it is simple to implement and fits the required O(n²) complexity class.  
 
-**Medium — Chunk Sort O(n√n):**  
+**Medium** — `Chunk Sort` O(n√n):  
 Divides the input into approximately √n-sized chunks and processes the elements chunk by chunk using the two stacks.  
-We chose this approach because it reduces the number of operations compared with the Simple strategy while meeting the required O(n√n) complexity class.  
+We chose Chunk Sort because it reduces the number of operations compared with the Simple strategy while meeting the required O(n√n) complexity class.  
 
-**Complex — Radix Sort O(n log n):**  
+**Complex** — `Radix Sort` O(n log n):  
 Uses the ranked values and their binary representation to sort the stack bit by bit.  
 Elements are repeatedly moved between the two stacks according to the current bit.  
 We chose Radix Sort because it provides efficient sorting for large inputs and fits the required O(n log n) complexity class.
 
-**Adaptive:**  
-The program always calculates the disorder of the initial input before performing any sorting operations, as required by the subject.  
-When the Adaptive strategy is selected (either explicitly with --adaptive or **by default** when no strategy flag is provided),  
-the measured disorder determines which sorting method is used:  
+**Adaptive:** — by default or when `--adaptive` is selected:  
+The program always calculates the disorder of the initial input before sorting, as required by the subject.  
+When `--adaptive` is selected, or when no strategy flag is provided, the measured disorder determines the sorting algorithm:
 ```
 Low disorder (< 0.2): Selection Sort — O(n²)  
 Medium disorder (0.2 ≤ disorder < 0.5): Chunk Sort — O(n√n)  
 High disorder (≥ 0.5): Radix Sort — O(n log n)  
 ```
-When --simple, --medium, or --complex is explicitly selected, the disorder is still calculated as required, but it does not determine the selected strategy.  
-The specified algorithm is used directly. This allows the Adaptive strategy to choose an appropriate sorting method based on the initial state of the data    
-while ensuring that all four required strategies can also be selected explicitly.
+When `--simple`, `--medium`, or `--complex` is explicitly selected, the disorder is still calculated but does not affect the chosen strategy.  
+The corresponding algorithm is used directly.
 
 ## Data structure
-We chose a dynamically allocated array to store the stack elements. The t_stack structure keeps track of the array, its current size, and its capacity.  
+We chose a dynamically allocated `array` to store the stack elements. The t_stack structure keeps track of the array, its current size, and its capacity.  
 Arrays provide simple indexing and allow us to access elements efficiently by position.  
 We chose this approach because we were already comfortable working with arrays from previous projects and it made the implementation easier to manage.
 
@@ -164,9 +162,10 @@ We chose this approach because we were already comfortable working with arrays f
 This project focuses on:
 
 - Designing and implementing efficient sorting algorithms under strict constraints.
-- Understanding and manipulating stack-based data structures.
+- Understanding and manipulating stack-based data structures using arrays.
 - Managing dynamic memory allocation and preventing memory leaks.
-- Working with linked lists and creating reusable data structures.
-- Handling input validation and edge cases, such as duplicates, invalid arguments, and integer overflow.
-- Optimizing the number of operations required to sort a stack.
-- Improving problem-solving skills through algorithm design and performance analysis.
+- Handling input parsing and validation, including duplicates, invalid arguments, and integer overflow.
+- Implementing and optimizing stack operations to minimize the number of operations required to sort the data.
+- Handling edge cases and different input formats reliably.
+- Analyzing sorting performance using operation counts and disorder metrics.
+- Improving problem-solving skills through algorithm design, optimization, and performance analysis.
