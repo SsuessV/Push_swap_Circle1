@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 11:31:28 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 09:01:33 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 09:21:26 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	bfly_push(t_stack *a, t_stack *b, int start, int end, t_info *info)
 	int	middle;
 	int	atop;
 
-	if (!a || !b || a->size == 0)
+	if (!a || !b || a->size == 0) //why are u passing a/b instead of stack_a/b only in this function?
 		return ;
 	middle = (start + end) / 2;
 	atop = a->numbers[0].rank;

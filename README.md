@@ -24,18 +24,17 @@ This project was developed by:
   - Implemented input parsing, argument validation, and error handling.
   - Developed stack operations (swap, push).
   - Implemented Small Sort (2–5 inputs), Simple strategy (Selection Sort), and Complex strategy (Radix Sort).
-  - Implemented data structures and operation counters for Benchmark mode.
-  - Ensured 42 Norm compliance and regularly checked code with Norminette.
-  - Tested implementations with various edge cases.
+  - Implemented benchmark data structures and operation counters.
+  - Ensured 42 Norm/Norminette compliance and maintained code readability.
+  - Performed extensive edge-case testing and debugging.
 
 
 - Bea-Marie, Surilla (bsurilla)
-  - Implemented stack structure, memory management, and stack operations.
+  - Implemented stack initialization, dynamic memory allocation, and memory cleanup.
   - Developed stack operations (rotate, reverse-rotate).
   - Developed the Medium strategy (Chunk Sort).
   - Implemented ranking, disorder calculation, and strategy selection.
-  - Implemented strategy flags (--simple, --medium, --complex, --adaptive).
-  - Implemented Benchmark mode and integrated all strategies.
+  - Implemented and integrated Benchmark mode.
   - Performed testing and debugging.
 
 ---
