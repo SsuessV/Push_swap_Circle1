@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 16:07:35 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 09:01:47 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,27 @@ void		run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		selection_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		smallest_to_top(t_stack *stack_a, t_info *info);
 int			find_the_smallest(t_numbers *numbers, int size);
+void		small_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
+void		sort_two(t_stack *stack_a, t_info *info);
+void		sort_three(t_stack *stack_a, t_info *info);
+void		first_biggest(t_stack *stack_a, t_info *info,
+				int second, int third);
+void		second_biggest(t_stack *stack_a, t_info *info,
+				int first, int third);
+void		third_biggest(t_stack *stack_a, t_info *info,
+				int first, int second);
+void		sort_four(t_stack *stack_a, t_stack *stack_b, t_info *info);
+void		sort_five(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			count_bits(int max_rank);
 void		radix_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		chunk_sort(t_stack *stack_a, t_stack *stack_b, t_info *info);
 int			chunk_range(t_stack *stack);
 int			ft_sqrt(int size);
 void		move_chunks_to_b(t_stack *stack_a, t_stack *stack_b, t_info *info);
-int			current_selection(t_stack *stack, int start, int end);
-void		get_to_top(t_stack *stack, int selected_index, char c, t_info *info);
+int			current_selection(t_stack *stack,
+				int start, int end);
+void		get_to_top(t_stack *stack, int selected_index,
+				char c, t_info *info);
 void		reverse_to_top(t_stack *stack, int index, char c, t_info *info);
 void		bfly_push(t_stack *stack_a, t_stack *stack_b, int start, int end, t_info *info);
 void		back_to_a(t_stack *stack_a, t_stack *stack_b, t_info *info);

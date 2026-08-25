@@ -15,6 +15,7 @@ SRCS =	algo_complex_radix_sort.c \
 		algo_medium_cs_move_to_b.c \
 		algo_simple_selection_sort.c \
 		algo_small_sort.c \
+		algo_small_sort2.c \
 		assign_ranks.c \
 		benchmark.c \
 		disorder.c \

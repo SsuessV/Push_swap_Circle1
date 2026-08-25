@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 12:57:44 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/25 08:46:08 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	is_valid_number(char *input)
 {
 	if (*input == '+' || *input == '-')
-		input++; //after a sign
+		input++;
 	if (*input == '\0')
 		return (0);
 	while (*input)
 	{
-		if (!('0' <= *input && *input <= '9')) //every character must be a digit
+		if (!('0' <= *input && *input <= '9'))
 			return (0);
 		input++;
 	}

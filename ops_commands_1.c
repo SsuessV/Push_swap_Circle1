@@ -6,17 +6,17 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/21 12:58:23 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 08:46:19 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
 
-void	info_init(t_info *info) //initializes a struct variable
+void	info_init(t_info *info)
 {
 	info->strategy = 0;
-	info->algorithm = 3; // why is it set to 3?
+	info->algorithm = 3;
 	info->bench = 0;
 	info->disorder = 0;
 	info->total_ops = 0;

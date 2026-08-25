@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/20 16:47:34 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 08:45:33 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	start = starting_index(argc, argv, info);
 	if (argc - start == 0)
 		return (0);
-	substr = get_substr(argc, argv, start); //process the input numbers into substrs
-	if (!substr || !substr[0]) //./push_swap ""should print error
+	substr = get_substr(argc, argv, start);
+	if (!substr || !substr[0])
 		print_error();
 	size = count_size(substr);
 	arr = malloc(size * sizeof(int));
@@ -47,7 +47,7 @@ char	**get_substr(int argc, char **argv, int start)
 	char		**substr;
 
 	substr = NULL;
-	if (argc - start == 1) //only 1 argument after the flags
+	if (argc - start == 1)
 		substr = ft_split (argv[start], ' ');
 	else
 		substr = &argv[start];

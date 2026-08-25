@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:51:14 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 20:42:29 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 08:45:33 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	calculate_disorder(t_stack *stack)//ur disorder is a fraction so u want to keep the decimal part so we use double 
+double	calculate_disorder(t_stack *stack)
 {
-	int		inversions;//count variable that trakcs how many pairs are inverted, not sorted
+	int		inversions;
 	int		pairs;
 	double	disorder;
 
@@ -35,7 +35,7 @@ int	count_inversions(t_stack *stack)
 	int	inversions;
 
 	i = 0;
-	j = 1; //2nd element
+	j = 1;
 	inversions = 0;
 	while (i < stack->size)
 	{

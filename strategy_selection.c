@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strategy_selection.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:39:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 21:38:22 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 08:24:34 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ void	run_adaptive(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	if (info->disorder == 0)
 		return ;
+	if (stack_a->size <= 5)
+	{
+		small_sort(stack_a, stack_b, info);
+		return ;
+	}
 	if (info->disorder < 0.2)
 	{
 		info->algorithm = 1;
