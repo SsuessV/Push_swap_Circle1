@@ -6,12 +6,11 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 08:46:19 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:33:04 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
 
 void	info_init(t_info *info)
 {

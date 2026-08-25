@@ -6,12 +6,11 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 11:28:16 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 13:41:38 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:31:08 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
 
 int	starting_index(int argc, char **argv, t_info *info)
 {

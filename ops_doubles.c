@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ops_doubles.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 21:16:22 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 16:13:04 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:33:04 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
 
 void	ss(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
