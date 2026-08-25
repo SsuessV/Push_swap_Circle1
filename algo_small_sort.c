@@ -6,17 +6,22 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 17:35:35 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 08:43:11 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:10:50 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(t_stack *stack_a, t_info *info)
+void	small_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
-	if (stack_a->size == 2
-		&& stack_a->numbers[0].rank > stack_a->numbers[1].rank)
-		sa(stack_a, info);
+	if (stack_a->size == 2)
+		sort_two(stack_a, info);
+	else if (stack_a->size == 3)
+		sort_three(stack_a, info);
+	else if (stack_a->size == 4)
+		sort_four(stack_a, stack_b, info);
+	else if (stack_a->size == 5)
+		sort_five(stack_a, stack_b, info);
 }
 
 void	sort_three(t_stack *stack_a, t_info *info)

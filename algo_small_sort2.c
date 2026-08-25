@@ -12,6 +12,13 @@
 
 #include "push_swap.h"
 
+void	sort_two(t_stack *stack_a, t_info *info)
+{
+	if (stack_a->size == 2
+		&& stack_a->numbers[0].rank > stack_a->numbers[1].rank)
+		sa(stack_a, info);
+}
+
 void	sort_four(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	smallest_to_top(stack_a, info);

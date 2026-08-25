@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:24:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 08:41:14 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:09:41 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,4 @@ int	find_the_smallest(t_numbers *numbers, int size)
 		i++;
 	}
 	return (min_index);
-}
-
-void	small_sort(t_stack *stack_a, t_stack *stack_b, t_info *info)
-{
-	if (stack_a->size == 2)
-		sort_two(stack_a, info);
-	else if (stack_a->size == 3)
-		sort_three(stack_a, info);
-	else if (stack_a->size == 4)
-		sort_four(stack_a, stack_b, info);
-	else if (stack_a->size == 5)
-		sort_five(stack_a, stack_b, info);
 }
