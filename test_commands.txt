@@ -1,0 +1,102 @@
+test small inputs 2-5 w/o quotes
+./push_swap 3 2 1
+
+./push_swap ""
+-> Error
+./push_swap
+-> nothing
+
+./push_swap 1
+->nothing
+
+check if defaults (no flags) behaves as adaptive
+
+test bench --bench
+
+flag + bench combination
+
+verify stdout vs stderr
+./push_swap --bench 5 1 4 2 3 > stdout.txt 2> stderr.txt
+cat stdout.txt
+-> should contain only the stack ops
+cat stderr.txt
+→ should contain the benchmark
+
+it only shows the stack ops
+./push_swap --bench 5 1 4 2 3 2>/dev/null
+
+
+invalid inputs
+./push_swap 3 one 2
+./push_swap 3 2147483648 2
+./push_swap 3 -2147483649 2
+
+dups 
+./push_swap 3 2 3
+-> Error
+
+invalid flags
+./push_swap --simplex 3 2 1
+-> Error
+
+with checker
+1. give permission
+chmod +x checker name
+
+2.
+./push_swap 3 2 1 | ./checker_linux 3 2 1
+
+./push_swap --simple 3 2 1 | ./checker_linux 3 2 1
+./push_swap --medium 3 2 1 | ./checker_linux 3 2 1
+./push_swap --complex 3 2 1 | ./checker_linux 3 2 1
+./push_swap --adaptive 3 2 1 | ./checker_linux 3 2 1
+-> should all get 'ok'
+
+random nums of 100 and 500
+for 100
+ARG="$(shuf -i 0-9999 -n 100 | tr '\n' ' ')"
+./push_swap $ARG | wc -l
+
+target:
+< 2000  PASS
+< 1500  GOOD
+< 700   EXCELLENT
+
+for 500
+ARG="$(shuf -i 0-9999 -n 500 | tr '\n' ' ')"
+./push_swap $ARG | wc -l
+
+target:
+< 12000  PASS
+< 8000   GOOD
+< 5500   EXCELLENT
+
+./push_swap --simple $ARG | ./checker_linux $ARG
+./push_swap --medium $ARG | ./checker_linux $ARG
+./push_swap --complex $ARG | ./checker_linux $ARG
+./push_swap --adaptive $ARG | ./checker_linux $ARG
+-> all ok
+
+test the benchmark mode
+./push_swap --bench $ARG
+
+ex)
+ARG="$(shuf -i 0-9999 -n 500 | tr '\n' ' ')"
+./push_swap --bench $ARG
+
+see if the adaptive is choosing the right regime based on the disorder calculation
+
+test the disorder
+
+low disorder:
+ARG="$( (seq 100 -1 1; seq 101 500) | tr '\n' ' ')"
+./push_swap --bench $ARG
+
+should select:
+Adaptive / O(n²)
+
+High disorder:
+ARG="$(shuf -i 0-9999 -n 500 | tr '\n' ' ')"
+./push_swap --bench $ARG
+
+Adaptive / O(n log n)
