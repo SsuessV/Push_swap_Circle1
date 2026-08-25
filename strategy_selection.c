@@ -6,12 +6,11 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:39:12 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 08:24:34 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 18:51:08 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
 
 void	choose_strategy(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
