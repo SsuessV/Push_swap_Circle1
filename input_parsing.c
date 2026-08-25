@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 18:32:00 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 22:01:36 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,14 @@ char	**get_substr(int argc, char **argv, int start)
 	return (substr);
 }
 
-int	validate_convert_fill(int *arr, char **substr, int size)
+int	count_size(char **substr)
 {
-	int			i;
-	long long	value;
+	int	size;
 
-	i = 0;
-	while (i < size)
-	{
-		if ((is_valid_number(substr[i]) == 0))
-			return (1);
-		value = ft_atoll(substr[i]);
-		if (is_inrange(value) == 0)
-			return (1);
-		arr[i] = (int)value;
-		i++;
-	}
-	return (0);
+	size = 0;
+	while (substr[size])
+		size++;
+	return (size);
 }
 
 long long	ft_atoll(const char *nptr)
