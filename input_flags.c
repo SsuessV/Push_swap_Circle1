@@ -3,15 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   input_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 11:28:16 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 16:20:20 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 13:41:38 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+
+int	starting_index(int argc, char **argv, t_info *info)
+{
+	int	i;
+	int	strategy;
+	int	mode;
+
+	i = 1;
+	while (i < argc)
+	{
+		strategy = valid_strategy(argv[i], info);
+		mode = output_mode(argv[i], info);
+		if (strategy == 0 && mode == 0)
+			break ;
+		i++;
+	}
+	return (i);
+}
 
 int	valid_strategy(char *argv, t_info *info)
 {
@@ -46,22 +64,4 @@ int	output_mode(char *argv, t_info *info)
 		return (1);
 	}
 	return (0);
-}
-
-int	starting_index(int argc, char **argv, t_info *info)
-{
-	int	i;
-	int	strategy;
-	int	mode;
-
-	i = 1;
-	while (i < argc)
-	{
-		strategy = valid_strategy(argv[i], info);
-		mode = output_mode(argv[i], info);
-		if (strategy == 0 && mode == 0)
-			break ;
-		i++;
-	}
-	return (i);
 }
