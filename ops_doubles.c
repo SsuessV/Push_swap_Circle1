@@ -18,9 +18,7 @@ void	ss(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		return ;
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
-	info->ss++;
-	info->total_ops++;
+	record_op(info, &info->ss, "ss");
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b, t_info *info)
@@ -29,9 +27,7 @@ void	rr(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		return ;
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("rr\n");
-	info->rr++;
-	info->total_ops++;
+	record_op(info, &info->rr, "rr");
 }
 
 void	rrr(t_stack *stack_a, t_stack *stack_b, t_info *info)
@@ -40,7 +36,5 @@ void	rrr(t_stack *stack_a, t_stack *stack_b, t_info *info)
 		return ;
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_printf("rrr\n");
-	info->rrr++;
-	info->total_ops++;
+	record_op(info, &info->rrr, "rrr");
 }

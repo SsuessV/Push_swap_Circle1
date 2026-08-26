@@ -28,6 +28,7 @@ SRCS =	algo_complex_radix_sort.c \
 		ops_commands_2.c \
 		ops_doubles.c \
 		ops_singles.c \
+		ops_record.c \
 		stack.c \
 		strategy_selection.c \
 

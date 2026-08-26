@@ -93,6 +93,7 @@ void		rr(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		rrr(t_stack *stack_a, t_stack *stack_b, t_info *info);
 void		rra(t_stack *stack_a, t_info *info);
 void		rrb(t_stack *stack_b, t_info *info);
+void		record_op(t_info *info, int *counter, char *name);
 
 /* disorder and strategies*/
 double		calculate_disorder(t_stack *stack);
