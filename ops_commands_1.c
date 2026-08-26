@@ -30,6 +30,7 @@ void	info_init(t_info *info)
 	info->rra = 0;
 	info->rrb = 0;
 	info->rrr = 0;
+	info->count = 0;
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b, t_info *info)
@@ -37,9 +38,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b, t_info *info)
 	if (!stack_a || !stack_b || stack_b->size == 0)
 		return ;
 	push(stack_a, stack_b);
-	ft_printf("pa\n");
-	info->pa++;
-	info->total_ops++;
+	record_op(info, &info->pa, "pa");
 }
 
 void	pb(t_stack *stack_b, t_stack *stack_a, t_info *info)
@@ -47,9 +46,7 @@ void	pb(t_stack *stack_b, t_stack *stack_a, t_info *info)
 	if (!stack_a || !stack_b || stack_a->size == 0)
 		return ;
 	push(stack_b, stack_a);
-	ft_printf("pb\n");
-	info->pb++;
-	info->total_ops++;
+	record_op(info, &info->pb, "pb");
 }
 
 void	sa(t_stack *stack_a, t_info *info)
@@ -57,9 +54,7 @@ void	sa(t_stack *stack_a, t_info *info)
 	if (!stack_a || stack_a->size < 2)
 		return ;
 	swap(stack_a);
-	ft_printf("sa\n");
-	info->sa++;
-	info->total_ops++;
+	record_op(info, &info->sa, "sa");
 }
 
 void	sb(t_stack *stack_b, t_info *info)
@@ -67,7 +62,5 @@ void	sb(t_stack *stack_b, t_info *info)
 	if (!stack_b || stack_b->size < 2)
 		return ;
 	swap(stack_b);
-	ft_printf("sb\n");
-	info->sb++;
-	info->total_ops++;
+	record_op(info, &info->sb, "sb");
 }

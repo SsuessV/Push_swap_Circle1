@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 11:28:16 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 18:31:08 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/25 13:41:38 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ int	valid_strategy(char *argv, t_info *info)
 	if (ft_strncmp(argv, "--adaptive", 11) == 0)
 	{
 		info->strategy = 0;
+		return (1);
+	}
+	if (ft_strncmp(argv, "--count-only", 13) == 0)
+	{
+		info->count = 1;
 		return (1);
 	}
 	return (0);

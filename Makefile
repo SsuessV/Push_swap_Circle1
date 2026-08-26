@@ -26,6 +26,7 @@ SRCS =	algo_complex_radix_sort.c \
 		main.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
+		ops_record.c \
 		ops_doubles.c \
 		ops_singles.c \
 		stack.c \

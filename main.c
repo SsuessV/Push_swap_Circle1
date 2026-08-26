@@ -24,6 +24,11 @@ int	main(int argc, char **argv)
 	stack_init(&b, NULL, 0, a.capacity);
 	info.disorder = calculate_disorder(&a);
 	choose_strategy(&a, &b, &info);
+	if (info.count)
+	{
+		ft_putnbr_fd(info.total_ops, 1);
+		ft_putchar_fd('\n', 1);
+	}
 	print_benchmark(&info);
 	stack_free(&a);
 	stack_free(&b);
