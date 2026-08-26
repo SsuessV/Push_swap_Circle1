@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 22:02:39 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/26 20:50:05 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,30 @@ int	is_duplicate(int *arr, int size)
 		i++;
 	}
 	return (0);
+}
+
+long long	parse_number(const char *str, int sign)
+{
+	unsigned long long	n;
+	unsigned long long	limit;
+	unsigned long long	digit;
+
+	n = 0;
+	if (sign < 0)
+		limit = (unsigned long long)LLONG_MAX + 1;
+	else
+		limit = LLONG_MAX;
+	while (*str >= '0' && *str <= '9')
+	{
+		digit = (unsigned long long)(*str - '0');
+		if (n > (limit - digit) / 10)
+			print_error();
+		n = n * 10 + digit;
+		str++;
+	}
+	if (sign < 0 && n == (unsigned long long)LLONG_MAX + 1)
+		return (LLONG_MIN);
+	if (sign < 0)
+		return (-(long long)n);
+	return ((long long)n);
 }
