@@ -22,7 +22,7 @@ void	sort_two(t_stack *stack_a, t_info *info)
 void	sort_four(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	smallest_to_top(stack_a, info);
-	pb(stack_a, stack_b, info);
+	pb(stack_b, stack_a, info);
 	sort_three(stack_a, info);
 	pa(stack_a, stack_b, info);
 }
@@ -30,9 +30,9 @@ void	sort_four(t_stack *stack_a, t_stack *stack_b, t_info *info)
 void	sort_five(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	smallest_to_top(stack_a, info);
-	pb(stack_a, stack_b, info);
+	pb(stack_b, stack_a, info);
 	smallest_to_top(stack_a, info);
-	pb(stack_a, stack_b, info);
+	pb(stack_b, stack_a, info);
 	sort_three(stack_a, info);
 	pa(stack_a, stack_b, info);
 	pa(stack_a, stack_b, info);

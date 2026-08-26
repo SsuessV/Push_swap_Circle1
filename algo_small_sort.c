@@ -57,7 +57,7 @@ void	first_biggest(t_stack *stack_a, t_info *info, int second, int third)
 void	second_biggest(t_stack *stack_a, t_info *info, int first, int third)
 {
 	if (first > third)
-		sa(stack_a, info);
+		rra(stack_a, info);
 	else
 	{
 		sa(stack_a, info);
