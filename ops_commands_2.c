@@ -17,9 +17,7 @@ void	ra(t_stack *stack_a, t_info *info)
 	if (!stack_a)
 		return ;
 	rotate(stack_a);
-	ft_printf("ra\n");
-	info->ra++;
-	info->total_ops++;
+	record_op(info, &info->ra, "ra");
 }
 
 void	rb(t_stack *stack_b, t_info *info)
@@ -27,9 +25,7 @@ void	rb(t_stack *stack_b, t_info *info)
 	if (!stack_b)
 		return ;
 	rotate(stack_b);
-	ft_printf("rb\n");
-	info->rb++;
-	info->total_ops++;
+	record_op(info, &info->rb, "rb");
 }
 
 void	rra(t_stack *stack_a, t_info *info)
@@ -37,9 +33,7 @@ void	rra(t_stack *stack_a, t_info *info)
 	if (!stack_a)
 		return ;
 	reverse_rotate(stack_a);
-	ft_printf("rra\n");
-	info->rra++;
-	info->total_ops++;
+	record_op(info, &info->rra, "rra");
 }
 
 void	rrb(t_stack *stack_b, t_info *info)
@@ -47,7 +41,5 @@ void	rrb(t_stack *stack_b, t_info *info)
 	if (!stack_b)
 		return ;
 	reverse_rotate(stack_b);
-	ft_printf("rrb\n");
-	info->rrb++;
-	info->total_ops++;
+	record_op(info, &info->rrb, "rrb");
 }
