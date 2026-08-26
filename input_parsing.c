@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/26 20:49:55 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/26 21:02:07 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,17 +78,28 @@ long long	ft_atoll(const char *str)
 	return (parse_number(str, sign));
 }
 
-void	free_split(char **substr)
+long long	parse_number(const char *str, int sign)
 {
-	int	i;
+	unsigned long long	n;
+	unsigned long long	limit;
+	unsigned long long	digit;
 
-	i = 0;
-	if (!substr)
-		return ;
-	while (substr[i])
+	n = 0;
+	if (sign < 0)
+		limit = (unsigned long long)LLONG_MAX + 1;
+	else
+		limit = LLONG_MAX;
+	while (*str >= '0' && *str <= '9')
 	{
-		free(substr[i]);
-		i++;
+		digit = (unsigned long long)(*str - '0');
+		if (n > (limit - digit) / 10)
+			print_error();
+		n = n * 10 + digit;
+		str++;
 	}
-	free(substr);
+	if (sign < 0 && n == (unsigned long long)LLONG_MAX + 1)
+		return (LLONG_MIN);
+	if (sign < 0)
+		return (-(long long)n);
+	return ((long long)n);
 }
