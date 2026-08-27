@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops_commands_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 22:35:15 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 18:33:04 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 23:00:43 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	info_init(t_info *info)
 	info->rra = 0;
 	info->rrb = 0;
 	info->rrr = 0;
-	info->count = 0;
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b, t_info *info)

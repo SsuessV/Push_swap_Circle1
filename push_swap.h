@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/27 22:57:43 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 23:00:35 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ typedef struct s_info
 	int		rra;
 	int		rrb;
 	int		rrr;
-	int		count;
 }	t_info;
 
 /* Parsing */

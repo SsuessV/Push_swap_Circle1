@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 18:28:18 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 23:00:47 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	main(int argc, char **argv)
 	stack_init(&b, NULL, 0, a.capacity);
 	info.disorder = calculate_disorder(&a);
 	choose_strategy(&a, &b, &info);
-	if (info.count)
-	{
-		ft_putnbr_fd(info.total_ops, 1);
-		ft_putchar_fd('\n', 1);
-	}
 	print_benchmark(&info);
 	stack_free(&a);
 	stack_free(&b);
