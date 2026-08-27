@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 12:16:28 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 22:02:39 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 22:56:56 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 int	validate_convert_fill(int *arr, char **substr, int size)
 {
 	int			i;
+	int			error;
 	long long	value;
 
 	i = 0;
 	while (i < size)
 	{
-		if ((is_valid_number(substr[i]) == 0))
+		if ((!is_valid_number(substr[i])))
 			return (1);
-		value = ft_atoll(substr[i]);
-		if (is_inrange(value) == 0)
+		value = ft_atoll(substr[i], &error);
+		if (error || !is_inrange(value))
 			return (1);
 		arr[i] = (int)value;
 		i++;

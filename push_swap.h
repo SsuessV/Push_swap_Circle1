@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/25 19:59:15 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/27 22:57:43 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ typedef struct s_info
 
 /* Parsing */
 int			parse_input(int argc, char **argv, t_stack *stack, t_info *info);
-int			count_size(char **numbers);
-int			validate_convert_fill(int *arr, char **numbers, int size);
-long long	ft_atoll(const char *nptr);
-void		free_split(char **words);
+//int			count_size(char **numbers);
+int			validate_convert_fill(int *arr, char **substr, int size);
+long long	ft_atoll(const char *str, int *error);
 int			is_valid_number(char *input);
 int			is_inrange(long long n);
 int			is_duplicate(int *arr, int size);
@@ -67,8 +66,9 @@ void		print_error(void);
 int			starting_index(int argc, char **argv, t_info *info);
 int			output_mode(char *argv, t_info *info);
 int			valid_strategy(char *argv, t_info *info);
-char		**get_substr(int argc, char **argv, int start);
-void		input_cleanup(int *arr, char **substr, int argc, int start);
+void		input_cleanup(int *arr);
+long long	parse_number(const char *str, int sign, int *error);
+int			*create_array(int size);
 
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);

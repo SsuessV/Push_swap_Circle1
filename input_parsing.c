@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/25 22:01:36 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 22:59:05 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 {
-	char		**substr;
 	int			*arr;
 	int			size;
 	int			start;
@@ -24,34 +23,32 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	start = starting_index(argc, argv, info);
 	if (argc - start == 0)
 		return (0);
-	substr = get_substr(argc, argv, start);
-	if (!substr || !substr[0])
-		print_error();
-	size = count_size(substr);
-	arr = malloc(size * sizeof(int));
+	if (argc - start == 1 && (argv[start][0] == '\0'
+		|| ft_strchr(argv[start], ' ')))
+		return (print_error (), 0);
+	size = argc - start;
+	arr = create_array(size);
 	if (!arr)
-		print_error();
-	if (validate_convert_fill(arr, substr, size) || is_duplicate(arr, size))
-		input_cleanup(arr, substr, argc, start);
+		return (0);
+	if (validate_convert_fill(arr, &argv[start], size) || is_duplicate(arr, size))
+		return(input_cleanup(arr), 0);
 	stack_init(stack, arr, size, size);
 	free(arr);
-	if (argc - start == 1)
-		free_split(substr);
+	if (!stack->numbers)
+		return (0);
 	return (1);
 }
 
-char	**get_substr(int argc, char **argv, int start)
+int	*create_array(int size)
 {
-	char		**substr;
+	int	*arr;
 
-	substr = NULL;
-	if (argc - start == 1)
-		substr = ft_split (argv[start], ' ');
-	else
-		substr = &argv[start];
-	return (substr);
+	arr = malloc(size * sizeof(int));
+	if (!arr)
+		print_error();
+	return (arr);
 }
-
+/*
 int	count_size(char **substr)
 {
 	int	size;
@@ -60,9 +57,9 @@ int	count_size(char **substr)
 	while (substr[size])
 		size++;
 	return (size);
-}
+}*/
 
-long long	ft_atoll(const char *nptr)
+long long	ft_atoll(const char *str, int *error)
 {
 	int			i;
 	int			sign;
@@ -71,22 +68,39 @@ long long	ft_atoll(const char *nptr)
 
 	i = 0;
 	sign = 1;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	*error = 0;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
 		if (nptr[i] == '-')
 			sign = -1;
 		i++;
 	}
-	number = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	return (parse_number(str, sign, error));
+}
+
+long long	parse_number(const char *str, int sign, int *error)
+{
+	unsigned long long	n;
+	unsigned long long	limit;
+	unsigned long long	digit;
+
+	n = 0;
+	if (sign < 0)
+		limit = (unsigned long long)LLONG_MAX + 1;
+	else
+		limit = LLONG_MAX;
+	while (*str >= '0' && *str <= '9')
 	{
-		digit = nptr[i] - '0';
-		if (sign == 1 && number > (LLONG_MAX - digit) / 10)
-			return (LLONG_MAX);
-		if (sign == -1 && number > (-(LLONG_MIN + digit)) / 10)
-			return (LLONG_MIN);
-		number = number * 10 + digit;
-		i++;
+		digit = (unsigned long long)(*str - '0');
+		if (n > (limit - digit) / 10)
+		{
+			*error = 1;
+			return (0);
+		}
+		n = n * 10 + digit;
+		str++;
 	}
 	return (number * sign);
 }
