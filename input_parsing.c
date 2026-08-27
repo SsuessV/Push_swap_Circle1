@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/27 23:06:58 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 23:08:35 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	arr = create_array(size);
 	if (!arr)
 		return (0);
-	if (validate_convert_fill(arr, &argv[start], size) || is_duplicate(arr, size))
-		return(input_cleanup(arr), 0);
+	if (validate_convert_fill(arr, &argv[start], size)
+		|| is_duplicate(arr, size))
+		return (input_cleanup(arr), 0);
 	stack_init(stack, arr, size, size);
 	free(arr);
 	if (!stack->numbers)
@@ -102,4 +103,3 @@ long long	parse_number(const char *str, int sign, int *error)
 	}
 	return (n * sign);
 }
-
