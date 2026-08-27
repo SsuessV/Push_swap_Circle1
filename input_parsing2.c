@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   input_parsing2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/21 20:52:51 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/27 17:39:45 by bsurilla         ###   ########.fr       */
+/*   Created: 2026/08/27 17:31:00 by bsurilla          #+#    #+#             */
+/*   Updated: 2026/08/27 17:47:27 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	*create_array(int size)
 {
-	t_stack	a;
-	t_stack	b;
-	t_info	info;
+	int	*arr;
 
-	info_init(&info);
-	if (!parse_input(argc, argv, &a, &info))
-		return (0);
-	stack_init(&b, NULL, 0, a.capacity);
-	if (!b.numbers)
-		return (0);
-	info.disorder = calculate_disorder(&a);
-	choose_strategy(&a, &b, &info);
-	print_benchmark(&info);
-	stack_free(&a);
-	stack_free(&b);
+	arr = malloc(size * sizeof(int));
+	if (!arr)
+		print_error();
+	return (arr); 
 }

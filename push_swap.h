@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/26 20:50:27 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/27 17:41:45 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int			valid_strategy(char *argv, t_info *info);
 char		**get_substr(int argc, char **argv, int start);
 void		input_cleanup(int *arr, char **substr, int argc, int start);
 long long	parse_number(const char *str, int sign);
+int			*create_array(int size);
 
 /* Stack functions */
 void		stack_init(t_stack *stack, int *numbers, int size, int capacity);

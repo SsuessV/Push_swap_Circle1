@@ -6,7 +6,7 @@
 /*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/27 17:16:58 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/27 17:43:52 by bsurilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	if (!substr || !substr[0])
 		print_error();
 	size = count_size(substr);
-	arr = malloc(size * sizeof(int));
-	if (!arr)
-		print_error();
+	arr = create_array(size);
 	if (validate_convert_fill(arr, substr, size) || is_duplicate(arr, size))
 		input_cleanup(arr, substr, argc, start);
 	stack_init(stack, arr, size, size);
