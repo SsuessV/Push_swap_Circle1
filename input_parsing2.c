@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:31:00 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/27 17:47:27 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/27 17:55:07 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	*create_array(int size)
 	arr = malloc(size * sizeof(int));
 	if (!arr)
 		print_error();
-	return (arr); 
+	return (arr);
 }
