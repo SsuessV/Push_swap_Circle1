@@ -57,7 +57,7 @@ To recompile everything from scratch:
 
 ### Usage
 
-Compile the project using the provided Makefile:  
+Compile the project in *bash* using the provided Makefile:  
 `make`  
 Run the program by passing a list of integers as separate command-line arguments:  
 `./push_swap 4 67 3 87 12`  
