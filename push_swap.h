@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/28 02:01:47 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 02:17:06 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ typedef struct s_info
 
 /* Parsing */
 int			parse_input(int argc, char **argv, t_stack *stack, t_info *info);
-//int			count_size(char **numbers);
 int			validate_convert_fill(int *arr, char **substr, int size);
 long long	ft_atoll(const char *str, int *error);
 int			is_valid_number(char *input);

@@ -6,7 +6,7 @@
 /*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/28 02:04:00 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 02:16:25 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,6 @@ int	*create_array(int size)
 		print_error();
 	return (arr);
 }
-/*
-int	count_size(char **substr)
-{
-	int	size;
-
-	size = 0;
-	while (substr[size])
-		size++;
-	return (size);
-}*/
 
 long long	ft_atoll(const char *str, int *error)
 {
