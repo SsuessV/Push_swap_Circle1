@@ -61,10 +61,11 @@ Compile the project using the provided Makefile:
 `make`  
 Run the program by passing a list of integers as separate command-line arguments:  
 `./push_swap 4 67 3 87 12`  
-Each integer must be provided as a separate argument. The subject does not require support for multiple integers passed as a single quoted argument,  
-so such input is treated as invalid. (for example, ` "4 67 3 87 12"`)  
+Each integer must be provided as a separate argument. The subject does not require support for multiple integers passed as a single quoted argument,  so such input is treated as invalid. (for example, ` "4 67 3 87 12"`)  
 
-If no strategy is specified, the program uses the Adaptive strategy by default. The Adaptive strategy selects an algorithm based on the disorder of the input.  
+If no strategy is specified, the program uses the Adaptive strategy by default. The Adaptive strategy selects an algorithm based on the disorder of the input.
+
+To optimize our strategies we decided to add **Small Sort** to handle specifically small inputs up to a maximum of 5 elements. We use specialized methods for these cases because they can sort small inputs with fewer Push_swap operations than the general-purpose algorithms.  
 
 You can also explicitly select a strategy. When a strategy flag is used, it should be specified before the integer arguments, as demonstrated in the subject:
 ```
@@ -78,6 +79,7 @@ Flags placed after or between integer arguments are treated as ` invalid` input.
 ./push_swap 4 67 3 87 12 --simple
 ./push_swap 4 67 --simple 3 87 12
 ./push_swap 4 67 3 87 12 --simple --bench
+./push_swap --complex 4 67 3 87 12 --bench
 ```
 The program will output the sequence of operations required to sort the stack:  
 ```
@@ -127,10 +129,6 @@ All source code, algorithm choices, design decisions, and final implementations 
 ### Algorithm and Data Structure Choices
 
 ## Algorithms
-
-**Small Sort** — O(1) for a maximum of 5 elements:  
-Handles very small inputs of up to 5 elements using dedicated sorting functions for 2, 3, 4, and 5 elements.  
-We use specialized methods for these cases because they can sort small inputs with fewer Push_swap operations than the general-purpose algorithms.  
 
 **Simple** — `Selection Sort` O(n²):  
 Finds the smallest element, moves it to the top of stack A, and pushes it to stack B.  
