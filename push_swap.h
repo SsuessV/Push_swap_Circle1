@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:17:35 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/27 23:00:35 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 01:42:17 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ long long	parse_number(const char *str, int sign, int *error);
 int			*create_array(int size);
 
 /* Stack functions */
-void		stack_init(t_stack *stack, int *numbers, int size, int capacity);
+int			stack_init(t_stack *stack, int *numbers, int size, int capacity);
 void		stack_free(t_stack *stack);
 void		assign_ranks(t_stack *stack);
 

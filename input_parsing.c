@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/27 23:08:35 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 01:39:01 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	if (validate_convert_fill(arr, &argv[start], size)
 		|| is_duplicate(arr, size))
 		return (input_cleanup(arr), 0);
-	stack_init(stack, arr, size, size);
+	if (!stack_init(stack, arr, size, size))
+		return (free(arr), 0);
 	free(arr);
-	if (!stack->numbers)
-		return (0);
 	return (1);
 }
 

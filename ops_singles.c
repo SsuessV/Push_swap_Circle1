@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops_singles.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 20:21:06 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 01:06:21 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/28 01:21:56 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	push(t_stack *stack_dst, t_stack *stack_src)
 	if (!stack_dst || !stack_src)
 		return ;
 	if (stack_src->size == 0)
+		return ;
+	if (stack_dst->size >= stack_dst->capacity)
 		return ;
 	i = stack_dst->size;
 	while (i > 0)
