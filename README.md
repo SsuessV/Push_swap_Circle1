@@ -59,17 +59,25 @@ To recompile everything from scratch:
 
 Compile the project using the provided Makefile:  
 `make`  
-Run the program by passing a list of integers as arguments:  
+Run the program by passing a list of integers as separate command-line arguments:  
 `./push_swap 4 67 3 87 12`  
-If no strategy is specified, the program uses the Adaptive strategy by default.  
-The Adaptive strategy selects an algorithm based on the disorder of the input.  
+Each integer must be provided as a separate argument. The subject does not require support for multiple integers passed as a single quoted argument,  
+so such input is treated as invalid. (for example, ` "4 67 3 87 12"`)  
 
-You can also explicitly select a strategy:  
+If no strategy is specified, the program uses the Adaptive strategy by default. The Adaptive strategy selects an algorithm based on the disorder of the input.  
+
+You can also explicitly select a strategy. When a strategy flag is used, it should be specified before the integer arguments, as demonstrated in the subject:
 ```
 ./push_swap --simple 4 67 3 87 12
 ./push_swap --medium 4 67 3 87 12
 ./push_swap --complex 4 67 3 87 12
 ./push_swap --adaptive 4 67 3 87 12
+```
+Flags placed after or between integer arguments are treated as ` invalid` input.  
+```
+./push_swap 4 67 3 87 12 --simple
+./push_swap 4 67 --simple 3 87 12
+./push_swap 4 67 3 87 12 --simple --bench
 ```
 The program will output the sequence of operations required to sort the stack:  
 ```
