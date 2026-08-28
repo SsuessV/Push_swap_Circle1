@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 12:55:54 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/26 21:00:27 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 02:02:03 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ void	print_error(void)
 	exit(42);
 }
 
-void	input_cleanup(int *arr, char **substr, int argc, int start)
+void	input_cleanup(int *arr)
 {
 	free(arr);
-	if (argc - start == 1)
-		free_split(substr);
 	print_error();
 }
 

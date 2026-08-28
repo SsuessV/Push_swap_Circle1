@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsurilla <bsurilla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 14:44:13 by suyoun            #+#    #+#             */
-/*   Updated: 2026/08/27 17:43:52 by bsurilla         ###   ########.fr       */
+/*   Updated: 2026/08/28 02:04:00 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 {
-	char		**substr;
 	int			*arr;
 	int			size;
 	int			start;
@@ -24,34 +23,32 @@ int	parse_input(int argc, char **argv, t_stack *stack, t_info *info)
 	start = starting_index(argc, argv, info);
 	if (argc - start == 0)
 		return (0);
-	substr = get_substr(argc, argv, start);
-	if (!substr || !substr[0])
-		print_error();
-	size = count_size(substr);
+	if (argc - start == 1 && (argv[start][0] == '\0'
+		|| ft_strchr(argv[start], ' ')))
+		return (print_error (), 0);
+	size = argc - start;
 	arr = create_array(size);
-	if (validate_convert_fill(arr, substr, size) || is_duplicate(arr, size))
-		input_cleanup(arr, substr, argc, start);
-	stack_init(stack, arr, size, size);
-	if (!stack->numbers)
+	if (!arr)
 		return (0);
+	if (validate_convert_fill(arr, &argv[start], size)
+		|| is_duplicate(arr, size))
+		return (input_cleanup(arr), 0);
+	if (!stack_init(stack, arr, size, size))
+		return (free(arr), 0);
 	free(arr);
-	if (argc - start == 1)
-		free_split(substr);
 	return (1);
 }
 
-char	**get_substr(int argc, char **argv, int start)
+int	*create_array(int size)
 {
-	char		**substr;
+	int	*arr;
 
-	substr = NULL;
-	if (argc - start == 1)
-		substr = ft_split (argv[start], ' ');
-	else
-		substr = &argv[start];
-	return (substr);
+	arr = malloc(size * sizeof(int));
+	if (!arr)
+		print_error();
+	return (arr);
 }
-
+/*
 int	count_size(char **substr)
 {
 	int	size;
@@ -60,13 +57,14 @@ int	count_size(char **substr)
 	while (substr[size])
 		size++;
 	return (size);
-}
+}*/
 
-long long	ft_atoll(const char *str)
+long long	ft_atoll(const char *str, int *error)
 {
 	int	sign;
 
 	sign = 1;
+	*error = 0;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
 	if (*str == '+' || *str == '-')
@@ -75,10 +73,10 @@ long long	ft_atoll(const char *str)
 			sign = -1;
 		str++;
 	}
-	return (parse_number(str, sign));
+	return (parse_number(str, sign, error));
 }
 
-long long	parse_number(const char *str, int sign)
+long long	parse_number(const char *str, int sign, int *error)
 {
 	unsigned long long	n;
 	unsigned long long	limit;
@@ -93,13 +91,12 @@ long long	parse_number(const char *str, int sign)
 	{
 		digit = (unsigned long long)(*str - '0');
 		if (n > (limit - digit) / 10)
-			print_error();
+		{
+			*error = 1;
+			return (0);
+		}
 		n = n * 10 + digit;
 		str++;
 	}
-	if (sign < 0 && n == (unsigned long long)LLONG_MAX + 1)
-		return (LLONG_MIN);
-	if (sign < 0)
-		return (-(long long)n);
-	return ((long long)n);
+	return (n * sign);
 }

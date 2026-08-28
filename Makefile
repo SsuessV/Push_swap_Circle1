@@ -26,12 +26,11 @@ SRCS =	algo_complex_radix_sort.c \
 		main.c \
 		ops_commands_1.c \
 		ops_commands_2.c \
+		ops_record.c \
 		ops_doubles.c \
 		ops_singles.c \
-		ops_record.c \
 		stack.c \
 		strategy_selection.c \
-		input_parsing2.c \
 
 
 OBJS = $(SRCS:.c=.o)

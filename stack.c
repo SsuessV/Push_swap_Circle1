@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suyoun <suyoun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: suyoun <suyoun@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/19 15:21:21 by bsurilla          #+#    #+#             */
-/*   Updated: 2026/08/20 16:07:02 by suyoun           ###   ########.fr       */
+/*   Updated: 2026/08/28 01:36:45 by suyoun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_init(t_stack *stack, int *numbers, int size, int capacity)
+int	stack_init(t_stack *stack, int *numbers, int size, int capacity)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ void	stack_init(t_stack *stack, int *numbers, int size, int capacity)
 	stack->size = size;
 	stack->numbers = malloc(sizeof(t_numbers) * capacity);
 	if (!stack->numbers)
-		return ;
+		return (0);
 	i = 0;
 	while (i < size)
 	{
@@ -29,6 +29,7 @@ void	stack_init(t_stack *stack, int *numbers, int size, int capacity)
 		i++;
 	}
 	assign_ranks(stack);
+	return (1);
 }
 
 void	stack_free(t_stack *stack)
